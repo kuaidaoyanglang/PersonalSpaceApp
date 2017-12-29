@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FCF1C646-593C-43F9-8F20-19515C63C762}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PersonalSpaceApp</RootNamespace>
+    <AssemblyName>PersonalSpaceApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\AdEntity.cs" />
+    <Compile Include="Common\DownLoadEntity.cs" />
+    <Compile Include="Common\SpaceCodeEnterEntity.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\SpaceHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Tree_LeftContentType.cs" />
+    <Compile Include="Common\UploadEntity.cs" />
+    <Compile Include="Common\ViewType.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\BookType.cs" />
+    <Compile Include="Common\Oldsolution.cs" />
+    <Compile Include="Common\SPItemEntity.cs" />
+    <Compile Include="Common\SPVirtualFile.cs" />
+    <Compile Include="Common\SPVirtualFolder.cs" />
+    <Compile Include="Control\BreadLine.xaml.cs">
+      <DependentUpon>BreadLine.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\SpaceListView.xaml.cs">
+      <DependentUpon>SpaceListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SpaceListViewItem.xaml.cs">
+      <DependentUpon>SpaceListViewItem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\SpaceListViewItem_Extention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow_DownLoad.cs" />
+    <Compile Include="MainWindow_Search.cs" />
+    <Compile Include="MainWindow_Share.cs" />
+    <Compile Include="MainWindow_Upload.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\PageMode.xaml.cs">
+      <DependentUpon>PageMode.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\PageViewBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\Page_Office.xaml.cs">
+      <DependentUpon>Page_Office.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Window\ContentWindow.xaml.cs">
+      <DependentUpon>ContentWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Window\Copy_ViewWindow.xaml.cs">
+      <DependentUpon>Copy_ViewWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Window\DownLoadWindow.xaml.cs">
+      <DependentUpon>DownLoadWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\LoginWindowNew.xaml.cs">
+      <DependentUpon>LoginWindowNew.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Window\Remove_ViewWindow.xaml.cs">
+      <DependentUpon>Remove_ViewWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\DragView\DragTab.xaml.cs">
+      <DependentUpon>DragTab.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\DragView\DragTabItem.xaml.cs">
+      <DependentUpon>DragTabItem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\FileOpenManage\CustomFrameWorkElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\FileOpenManage\FileOpenManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\FileOpenManage\FileType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Loading\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Loading\Loading2.xaml.cs">
+      <DependentUpon>Loading2.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\NetTip\Initializtion_View.xaml.cs">
+      <DependentUpon>Initializtion_View.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\NetTip\NetWork_View2.xaml.cs">
+      <DependentUpon>NetWork_View2.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Watch_View\CustomMediaPlayerView.xaml.cs">
+      <DependentUpon>CustomMediaPlayerView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Watch_View\MediaPlayerView.xaml.cs">
+      <DependentUpon>MediaPlayerView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Watch_View\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Watch_View\Watch_ViewBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\Watch_View\WebView.xaml.cs">
+      <DependentUpon>WebView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\WindowSetting\ChangeWindowSize.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\WindowSetting\HitTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFControl\WindowSetting\NativeMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\GifHelper\GifAnimation.cs" />
+    <Compile Include="WPFHelper\GifHelper\GifImage.cs" />
+    <Compile Include="WPFHelper\GifHelper\GIFImageControl.cs" />
+    <Compile Include="WPFHelper\ListViewItem\DownLoadItem.xaml.cs">
+      <DependentUpon>DownLoadItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFHelper\ListViewItem\Ad_ListViewItem.xaml.cs">
+      <DependentUpon>Ad_ListViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFHelper\TreeViewItem\Ad_TreeViewItem.xaml.cs">
+      <DependentUpon>Ad_TreeViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFHelper\Button\SpaceButton.xaml.cs">
+      <DependentUpon>SpaceButton.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\DataGrid\CustomDataGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\DataItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\DragDropAdorner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\InputMessageWindow.xaml.cs">
+      <DependentUpon>InputMessageWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\ListViewItem\NavicateListViewItem.xaml.cs">
+      <DependentUpon>NavicateListViewItem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\ListViewItem\FileUploadItem.xaml.cs">
+      <DependentUpon>FileUploadItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFHelper\ListView\NavicateListView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\NavicateButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\UserControlBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\VisibilityManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\Window\WindowBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\Window\WindowOperationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WPFHelper\WPFElementManage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_TitleBG.png" />
+    <Resource Include="Image\button_Download.png" />
+    <Resource Include="Image\button_Dropdown.png" />
+    <Resource Include="Image\button_Share.png" />
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Image\pngCancelUpload.png" />
+    <Resource Include="Image\pngDownloadFailed.png" />
+    <Resource Include="Image\pngDownloadSuccess.png" />
+    <Resource Include="Image\pngUploadFailedWarningOff.png" />
+    <Resource Include="Image\TypeImage\folder-有文件的文件夹.png" />
+    <Resource Include="Image\TypeImage\jpeg.png" />
+    <Resource Include="Image\TypeImage\pdf.png" />
+    <Resource Include="Image\TypeImage\xls-.png" />
+    <Resource Include="Image\个人下.png" />
+    <Resource Include="Image\pngFoldingUploadWindow.png" />
+    <Resource Include="Image\对勾.png" />
+    <Resource Include="Image\小窗.png" />
+    <Resource Include="Image\最小化.png" />
+    <Resource Include="Image\矢量智能对象.png" />
+    <Resource Include="Image\退出.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\login_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\tophead_tx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_All.png" />
+    <Resource Include="Image\brush_Audio.png" />
+    <Resource Include="Image\brush_Office.png" />
+    <Resource Include="Image\brush_Picture.png" />
+    <Resource Include="Image\brush_Video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Recycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_FolderAdd.png" />
+    <Resource Include="Image\brush_Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Upload_Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Upload_Line2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ItemSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\TypeImage\ape.png" />
+    <Resource Include="Image\TypeImage\avi.png" />
+    <Resource Include="Image\TypeImage\bmp.png" />
+    <Resource Include="Image\TypeImage\csv.png" />
+    <Resource Include="Image\TypeImage\doc.png" />
+    <Resource Include="Image\TypeImage\docx.png" />
+    <Resource Include="Image\TypeImage\flv.png" />
+    <Resource Include="Image\TypeImage\folder.png" />
+    <Resource Include="Image\TypeImage\gif.png" />
+    <Resource Include="Image\TypeImage\htm.png" />
+    <Resource Include="Image\TypeImage\html.png" />
+    <Resource Include="Image\TypeImage\ico.png" />
+    <Resource Include="Image\TypeImage\jpg.png" />
+    <Resource Include="Image\TypeImage\mov.png" />
+    <Resource Include="Image\TypeImage\mp3.png" />
+    <Resource Include="Image\TypeImage\mp4.png" />
+    <Resource Include="Image\TypeImage\mpg.png" />
+    <Resource Include="Image\TypeImage\one.png" />
+    <Resource Include="Image\TypeImage\onetoc2.png" />
+    <Resource Include="Image\TypeImage\png.png" />
+    <Resource Include="Image\TypeImage\ppt.png" />
+    <Resource Include="Image\TypeImage\pptx.png" />
+    <Resource Include="Image\TypeImage\rar.png" />
+    <Resource Include="Image\TypeImage\record.png" />
+    <Resource Include="Image\TypeImage\rmvb.png" />
+    <Resource Include="Image\TypeImage\swf.png" />
+    <Resource Include="Image\TypeImage\txt.png" />
+    <Resource Include="Image\TypeImage\wav.png" />
+    <Resource Include="Image\TypeImage\wma.png" />
+    <Resource Include="Image\TypeImage\wmv.png" />
+    <Resource Include="Image\TypeImage\xls.png" />
+    <Resource Include="Image\TypeImage\xlsx.png" />
+    <Resource Include="Image\TypeImage\xlx.png" />
+    <Resource Include="Image\TypeImage\XML.png" />
+    <Resource Include="Image\TypeImage\zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Loading.Png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\BG_Login.png" />
+    <Resource Include="Image\yezi2.png" />
+    <Resource Include="Image\yezi3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\MainWindowLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Check.png" />
+    <Resource Include="Image\brush_CheckOver.png" />
+    <Resource Include="Image\brush_CheckSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_Download.png" />
+    <Resource Include="Image\brush_Recyle.png" />
+    <Resource Include="Image\brush_Share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\brush_ListView1.png" />
+    <Resource Include="Image\brush_ListView2.png" />
+    <Resource Include="Image\brush_PictureView1.png" />
+    <Resource Include="Image\brush_PictureView2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\blue.png" />
+    <Resource Include="Image\Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Cancel-button-拷贝.png" />
+    <Resource Include="Image\Remove-button-拷贝.png" />
+    <Resource Include="Image\Remove-button.png" />
+    <Resource Include="Image\关闭窗口.png" />
+    <Resource Include="Image\图层-46.png" />
+    <Resource Include="Image\底-拷贝1.png" />
+    <Resource Include="Image\搜索-拷贝.png" />
+    <Resource Include="Image\搜索icon.png" />
+    <Resource Include="Image\窗上中.png" />
+    <Resource Include="Image\窗上右.png" />
+    <Resource Include="Image\窗上左.png" />
+    <Resource Include="Image\窗下中.png" />
+    <Resource Include="Image\窗下右.png" />
+    <Resource Include="Image\窗下左.png" />
+    <Resource Include="Image\窗右.png" />
+    <Resource Include="Image\窗左.png" />
+    <Resource Include="Image\组-2.png" />
+    <Resource Include="Image\警告.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConferenceCommon\ConferenceCommon.csproj">
+      <Project>{fae862fb-9cdb-4d93-af95-8728ea8a9fd8}</Project>
+      <Name>ConferenceCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConferenceModel\ConferenceModel.csproj">
+      <Project>{f5de4d04-1e2f-4f4b-aea9-42ff01b78b32}</Project>
+      <Name>ConferenceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConferenceWebCommon\ConferenceWebCommon.csproj">
+      <Project>{188e312f-5daa-4432-a784-97243e68d9f6}</Project>
+      <Name>ConferenceWebCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\TypeImageSmall\accdb.png" />
+    <Resource Include="Image\TypeImageSmall\accde.png" />
+    <Resource Include="Image\TypeImageSmall\asax.png" />
+    <Resource Include="Image\TypeImageSmall\bmp.png" />
+    <Resource Include="Image\TypeImageSmall\doc.png" />
+    <Resource Include="Image\TypeImageSmall\docm.png" />
+    <Resource Include="Image\TypeImageSmall\docx.png" />
+    <Resource Include="Image\TypeImageSmall\dot.png" />
+    <Resource Include="Image\TypeImageSmall\dotm.png" />
+    <Resource Include="Image\TypeImageSmall\dotx.png" />
+    <Resource Include="Image\TypeImageSmall\eml.png" />
+    <Resource Include="Image\TypeImageSmall\folder.png" />
+    <Resource Include="Image\TypeImageSmall\gif.png" />
+    <Resource Include="Image\TypeImageSmall\hlp.png" />
+    <Resource Include="Image\TypeImageSmall\htm.png" />
+    <Resource Include="Image\TypeImageSmall\html.png" />
+    <Resource Include="Image\TypeImageSmall\ico.png" />
+    <Resource Include="Image\TypeImageSmall\infopathgeneric.png" />
+    <Resource Include="Image\TypeImageSmall\jpg.png" />
+    <Resource Include="Image\TypeImageSmall\mid.png" />
+    <Resource Include="Image\TypeImageSmall\midi.png" />
+    <Resource Include="Image\TypeImageSmall\mov.png" />
+    <Resource Include="Image\TypeImageSmall\mp3.png" />
+    <Resource Include="Image\TypeImageSmall\mp4.png" />
+    <Resource Include="Image\TypeImageSmall\mpd.png" />
+    <Resource Include="Image\TypeImageSmall\mpg.png" />
+    <Resource Include="Image\TypeImageSmall\mpp.png" />
+    <Resource Include="Image\TypeImageSmall\mpt.png" />
+    <Resource Include="Image\TypeImageSmall\msg.PNG" />
+    <Resource Include="Image\TypeImageSmall\notebk.png" />
+    <Resource Include="Image\TypeImageSmall\odp.png" />
+    <Resource Include="Image\TypeImageSmall\ods.PNG" />
+    <Resource Include="Image\TypeImageSmall\odt.png" />
+    <Resource Include="Image\TypeImageSmall\one.png" />
+    <Resource Include="Image\TypeImageSmall\onetoc2.png" />
+    <Resource Include="Image\TypeImageSmall\onp.png" />
+    <Resource Include="Image\TypeImageSmall\ont.png" />
+    <Resource Include="Image\TypeImageSmall\pdf.png" />
+    <Resource Include="Image\TypeImageSmall\png.png" />
+    <Resource Include="Image\TypeImageSmall\pot.png" />
+    <Resource Include="Image\TypeImageSmall\potm.png" />
+    <Resource Include="Image\TypeImageSmall\potx.png" />
+    <Resource Include="Image\TypeImageSmall\ppa.png" />
+    <Resource Include="Image\TypeImageSmall\ppam.png" />
+    <Resource Include="Image\TypeImageSmall\pps.png" />
+    <Resource Include="Image\TypeImageSmall\ppsdc.png" />
+    <Resource Include="Image\TypeImageSmall\ppsm.png" />
+    <Resource Include="Image\TypeImageSmall\ppsx.png" />
+    <Resource Include="Image\TypeImageSmall\ppt.png" />
+    <Resource Include="Image\TypeImageSmall\pptm.png" />
+    <Resource Include="Image\TypeImageSmall\pptx.png" />
+    <Resource Include="Image\TypeImageSmall\pub.png" />
+    <Resource Include="Image\TypeImageSmall\rmvb.png" />
+    <Resource Include="Image\TypeImageSmall\spdgeneric.png" />
+    <Resource Include="Image\TypeImageSmall\txt.png" />
+    <Resource Include="Image\TypeImageSmall\vdx.png" />
+    <Resource Include="Image\TypeImageSmall\visiogeneric.png" />
+    <Resource Include="Image\TypeImageSmall\vsx.png" />
+    <Resource Include="Image\TypeImageSmall\vtx.png" />
+    <Resource Include="Image\TypeImageSmall\wav.png" />
+    <Resource Include="Image\TypeImageSmall\wma.png" />
+    <Resource Include="Image\TypeImageSmall\wmv.png" />
+    <Resource Include="Image\TypeImageSmall\xla.png" />
+    <Resource Include="Image\TypeImageSmall\xlam.png" />
+    <Resource Include="Image\TypeImageSmall\xlmt.png" />
+    <Resource Include="Image\TypeImageSmall\xls.png" />
+    <Resource Include="Image\TypeImageSmall\xlsb.png" />
+    <Resource Include="Image\TypeImageSmall\xlsm.png" />
+    <Resource Include="Image\TypeImageSmall\xlsx.png" />
+    <Resource Include="Image\TypeImageSmall\xlt.png" />
+    <Resource Include="Image\TypeImageSmall\xltx.png" />
+    <Resource Include="Image\TypeImageSmall\xps.png" />
+    <Resource Include="Image\TypeImageSmall\xsn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Control\BreadLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SpaceListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\SpaceListViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Part\PageMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Part\Page_Office.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\ContentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Copy_ViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\DownLoadWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\LoginWindowNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window\Remove_ViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\DragView\DragTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\DragView\DragTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Loading\Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Loading\Loading2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\NetTip\Initializtion_View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\NetTip\NetWork_View2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Watch_View\CustomMediaPlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Watch_View\MediaPlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Watch_View\PictureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFControl\Watch_View\WebView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\Button\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\ListViewItem\DownLoadItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\ListViewItem\Ad_ListViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\TreeViewItem\Ad_TreeViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\Button\SpaceButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\DataGrid\CustomDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\InputMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\ListViewItem\NavicateListViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\ListViewItem\FileUploadItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\ListView\NavicateListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\Window\WindowBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFHelper\Window\WindowOperationBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\gifUploadWait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\最大化.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\gifUploadWait1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\gifUpload.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

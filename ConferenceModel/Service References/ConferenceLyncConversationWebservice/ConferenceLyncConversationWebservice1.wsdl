@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="JoinConferenceMainLyncConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lyncConversationEntity" type="tns:LyncConversationEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LyncConversationEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:LyncEntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="JonConferencePerson" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="LyncEntityBase" />
+      <s:element name="JoinConferenceMainLyncConversationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InterBigScreen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sharer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InterBigScreenResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PPTControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="controler" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PPTControlResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ContainConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContainConversationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContainConversationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FillConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="meetAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FillConversationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ForceRemoveConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceRemoveConversationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveConversationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LeaveConversation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactUri" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveConversationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ForbiddenConversationInit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForbiddenConversationInitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllowConversationInit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllowConversationInitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckConversationInit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConversationInitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckConversationInitResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ShareApplicationResourceNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="lyncResourceNotify" type="tns:LyncResourceNotify" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LyncResourceNotify">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:LyncEntityBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceShareName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceSharePersonName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ResourceSharePersonUri" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="LyncResourceOperationCodeType" type="tns:LyncResourceOperationCodeType" />
+              <s:element minOccurs="1" maxOccurs="1" name="ResourceType" type="tns:ResourceType" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:simpleType name="LyncResourceOperationCodeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="ShareResource" />
+          <s:enumeration value="ExitShareResource" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ResourceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Application" />
+          <s:enumeration value="DeskTop" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ShareApplicationResourceNotifyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="JoinConferenceMainLyncConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:JoinConferenceMainLyncConversation" />
+  </wsdl:message>
+  <wsdl:message name="JoinConferenceMainLyncConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:JoinConferenceMainLyncConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenSoapIn">
+    <wsdl:part name="parameters" element="tns:InterBigScreen" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenSoapOut">
+    <wsdl:part name="parameters" element="tns:InterBigScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="PPTControlSoapIn">
+    <wsdl:part name="parameters" element="tns:PPTControl" />
+  </wsdl:message>
+  <wsdl:message name="PPTControlSoapOut">
+    <wsdl:part name="parameters" element="tns:PPTControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContainConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:ContainConversation" />
+  </wsdl:message>
+  <wsdl:message name="ContainConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:ContainConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:FillConversation" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:FillConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForceRemoveConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:ForceRemoveConversation" />
+  </wsdl:message>
+  <wsdl:message name="ForceRemoveConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:ForceRemoveConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveConversation" />
+  </wsdl:message>
+  <wsdl:message name="RemoveConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaveConversationSoapIn">
+    <wsdl:part name="parameters" element="tns:LeaveConversation" />
+  </wsdl:message>
+  <wsdl:message name="LeaveConversationSoapOut">
+    <wsdl:part name="parameters" element="tns:LeaveConversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForbiddenConversationInitSoapIn">
+    <wsdl:part name="parameters" element="tns:ForbiddenConversationInit" />
+  </wsdl:message>
+  <wsdl:message name="ForbiddenConversationInitSoapOut">
+    <wsdl:part name="parameters" element="tns:ForbiddenConversationInitResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllowConversationInitSoapIn">
+    <wsdl:part name="parameters" element="tns:AllowConversationInit" />
+  </wsdl:message>
+  <wsdl:message name="AllowConversationInitSoapOut">
+    <wsdl:part name="parameters" element="tns:AllowConversationInitResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConversationInitSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConversationInit" />
+  </wsdl:message>
+  <wsdl:message name="CheckConversationInitSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConversationInitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ShareApplicationResourceNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:ShareApplicationResourceNotify" />
+  </wsdl:message>
+  <wsdl:message name="ShareApplicationResourceNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:ShareApplicationResourceNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenHttpGetOut" />
+  <wsdl:message name="PPTControlHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="controler" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PPTControlHttpGetOut" />
+  <wsdl:message name="ContainConversationHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ContainConversationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="meetAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationHttpGetOut" />
+  <wsdl:message name="ForceRemoveConversationHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceRemoveConversationHttpGetOut" />
+  <wsdl:message name="RemoveConversationHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveConversationHttpGetOut" />
+  <wsdl:message name="LeaveConversationHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="contactUri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveConversationHttpGetOut" />
+  <wsdl:message name="ForbiddenConversationInitHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForbiddenConversationInitHttpGetOut" />
+  <wsdl:message name="AllowConversationInitHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AllowConversationInitHttpGetOut" />
+  <wsdl:message name="CheckConversationInitHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckConversationInitHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InterBigScreenHttpPostOut" />
+  <wsdl:message name="PPTControlHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="controler" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PPTControlHttpPostOut" />
+  <wsdl:message name="ContainConversationHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ContainConversationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="meetAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillConversationHttpPostOut" />
+  <wsdl:message name="ForceRemoveConversationHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceRemoveConversationHttpPostOut" />
+  <wsdl:message name="RemoveConversationHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveConversationHttpPostOut" />
+  <wsdl:message name="LeaveConversationHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="contactUri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveConversationHttpPostOut" />
+  <wsdl:message name="ForbiddenConversationInitHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForbiddenConversationInitHttpPostOut" />
+  <wsdl:message name="AllowConversationInitHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AllowConversationInitHttpPostOut" />
+  <wsdl:message name="CheckConversationInitHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckConversationInitHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="ConferenceLyncConversationWebserviceSoap">
+    <wsdl:operation name="JoinConferenceMainLyncConversation">
+      <wsdl:input message="tns:JoinConferenceMainLyncConversationSoapIn" />
+      <wsdl:output message="tns:JoinConferenceMainLyncConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InterBigScreen">
+      <wsdl:input message="tns:InterBigScreenSoapIn" />
+      <wsdl:output message="tns:InterBigScreenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <wsdl:input message="tns:PPTControlSoapIn" />
+      <wsdl:output message="tns:PPTControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <wsdl:input message="tns:ContainConversationSoapIn" />
+      <wsdl:output message="tns:ContainConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <wsdl:input message="tns:FillConversationSoapIn" />
+      <wsdl:output message="tns:FillConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <wsdl:input message="tns:ForceRemoveConversationSoapIn" />
+      <wsdl:output message="tns:ForceRemoveConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <wsdl:input message="tns:RemoveConversationSoapIn" />
+      <wsdl:output message="tns:RemoveConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <wsdl:input message="tns:LeaveConversationSoapIn" />
+      <wsdl:output message="tns:LeaveConversationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <wsdl:input message="tns:ForbiddenConversationInitSoapIn" />
+      <wsdl:output message="tns:ForbiddenConversationInitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <wsdl:input message="tns:AllowConversationInitSoapIn" />
+      <wsdl:output message="tns:AllowConversationInitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <wsdl:input message="tns:CheckConversationInitSoapIn" />
+      <wsdl:output message="tns:CheckConversationInitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ShareApplicationResourceNotify">
+      <wsdl:input message="tns:ShareApplicationResourceNotifySoapIn" />
+      <wsdl:output message="tns:ShareApplicationResourceNotifySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceLyncConversationWebserviceHttpGet">
+    <wsdl:operation name="InterBigScreen">
+      <wsdl:input message="tns:InterBigScreenHttpGetIn" />
+      <wsdl:output message="tns:InterBigScreenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <wsdl:input message="tns:PPTControlHttpGetIn" />
+      <wsdl:output message="tns:PPTControlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <wsdl:input message="tns:ContainConversationHttpGetIn" />
+      <wsdl:output message="tns:ContainConversationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <wsdl:input message="tns:FillConversationHttpGetIn" />
+      <wsdl:output message="tns:FillConversationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <wsdl:input message="tns:ForceRemoveConversationHttpGetIn" />
+      <wsdl:output message="tns:ForceRemoveConversationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <wsdl:input message="tns:RemoveConversationHttpGetIn" />
+      <wsdl:output message="tns:RemoveConversationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <wsdl:input message="tns:LeaveConversationHttpGetIn" />
+      <wsdl:output message="tns:LeaveConversationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <wsdl:input message="tns:ForbiddenConversationInitHttpGetIn" />
+      <wsdl:output message="tns:ForbiddenConversationInitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <wsdl:input message="tns:AllowConversationInitHttpGetIn" />
+      <wsdl:output message="tns:AllowConversationInitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <wsdl:input message="tns:CheckConversationInitHttpGetIn" />
+      <wsdl:output message="tns:CheckConversationInitHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceLyncConversationWebserviceHttpPost">
+    <wsdl:operation name="InterBigScreen">
+      <wsdl:input message="tns:InterBigScreenHttpPostIn" />
+      <wsdl:output message="tns:InterBigScreenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <wsdl:input message="tns:PPTControlHttpPostIn" />
+      <wsdl:output message="tns:PPTControlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <wsdl:input message="tns:ContainConversationHttpPostIn" />
+      <wsdl:output message="tns:ContainConversationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <wsdl:input message="tns:FillConversationHttpPostIn" />
+      <wsdl:output message="tns:FillConversationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <wsdl:input message="tns:ForceRemoveConversationHttpPostIn" />
+      <wsdl:output message="tns:ForceRemoveConversationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <wsdl:input message="tns:RemoveConversationHttpPostIn" />
+      <wsdl:output message="tns:RemoveConversationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <wsdl:input message="tns:LeaveConversationHttpPostIn" />
+      <wsdl:output message="tns:LeaveConversationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <wsdl:input message="tns:ForbiddenConversationInitHttpPostIn" />
+      <wsdl:output message="tns:ForbiddenConversationInitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <wsdl:input message="tns:AllowConversationInitHttpPostIn" />
+      <wsdl:output message="tns:AllowConversationInitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <wsdl:input message="tns:CheckConversationInitHttpPostIn" />
+      <wsdl:output message="tns:CheckConversationInitHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConferenceLyncConversationWebserviceSoap" type="tns:ConferenceLyncConversationWebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="JoinConferenceMainLyncConversation">
+      <soap:operation soapAction="http://tempuri.org/JoinConferenceMainLyncConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterBigScreen">
+      <soap:operation soapAction="http://tempuri.org/InterBigScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <soap:operation soapAction="http://tempuri.org/PPTControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <soap:operation soapAction="http://tempuri.org/ContainConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <soap:operation soapAction="http://tempuri.org/FillConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <soap:operation soapAction="http://tempuri.org/ForceRemoveConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <soap:operation soapAction="http://tempuri.org/RemoveConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <soap:operation soapAction="http://tempuri.org/LeaveConversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <soap:operation soapAction="http://tempuri.org/ForbiddenConversationInit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <soap:operation soapAction="http://tempuri.org/AllowConversationInit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <soap:operation soapAction="http://tempuri.org/CheckConversationInit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShareApplicationResourceNotify">
+      <soap:operation soapAction="http://tempuri.org/ShareApplicationResourceNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceLyncConversationWebserviceSoap12" type="tns:ConferenceLyncConversationWebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="JoinConferenceMainLyncConversation">
+      <soap12:operation soapAction="http://tempuri.org/JoinConferenceMainLyncConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InterBigScreen">
+      <soap12:operation soapAction="http://tempuri.org/InterBigScreen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <soap12:operation soapAction="http://tempuri.org/PPTControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <soap12:operation soapAction="http://tempuri.org/ContainConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <soap12:operation soapAction="http://tempuri.org/FillConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <soap12:operation soapAction="http://tempuri.org/ForceRemoveConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <soap12:operation soapAction="http://tempuri.org/RemoveConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <soap12:operation soapAction="http://tempuri.org/LeaveConversation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <soap12:operation soapAction="http://tempuri.org/ForbiddenConversationInit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <soap12:operation soapAction="http://tempuri.org/AllowConversationInit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <soap12:operation soapAction="http://tempuri.org/CheckConversationInit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShareApplicationResourceNotify">
+      <soap12:operation soapAction="http://tempuri.org/ShareApplicationResourceNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceLyncConversationWebserviceHttpGet" type="tns:ConferenceLyncConversationWebserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="InterBigScreen">
+      <http:operation location="/InterBigScreen" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <http:operation location="/PPTControl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <http:operation location="/ContainConversation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <http:operation location="/FillConversation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <http:operation location="/ForceRemoveConversation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <http:operation location="/RemoveConversation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <http:operation location="/LeaveConversation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <http:operation location="/ForbiddenConversationInit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <http:operation location="/AllowConversationInit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <http:operation location="/CheckConversationInit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceLyncConversationWebserviceHttpPost" type="tns:ConferenceLyncConversationWebserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="InterBigScreen">
+      <http:operation location="/InterBigScreen" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="PPTControl">
+      <http:operation location="/PPTControl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ContainConversation">
+      <http:operation location="/ContainConversation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillConversation">
+      <http:operation location="/FillConversation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ForceRemoveConversation">
+      <http:operation location="/ForceRemoveConversation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveConversation">
+      <http:operation location="/RemoveConversation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveConversation">
+      <http:operation location="/LeaveConversation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ForbiddenConversationInit">
+      <http:operation location="/ForbiddenConversationInit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="AllowConversationInit">
+      <http:operation location="/AllowConversationInit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConversationInit">
+      <http:operation location="/CheckConversationInit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConferenceLyncConversationWebservice">
+    <wsdl:port name="ConferenceLyncConversationWebserviceSoap" binding="tns:ConferenceLyncConversationWebserviceSoap">
+      <soap:address location="http://192.168.11.214:11888/ConferenceLyncConversationWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceLyncConversationWebserviceSoap12" binding="tns:ConferenceLyncConversationWebserviceSoap12">
+      <soap12:address location="http://192.168.11.214:11888/ConferenceLyncConversationWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceLyncConversationWebserviceHttpGet" binding="tns:ConferenceLyncConversationWebserviceHttpGet">
+      <http:address location="http://192.168.11.214:11888/ConferenceLyncConversationWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceLyncConversationWebserviceHttpPost" binding="tns:ConferenceLyncConversationWebserviceHttpPost">
+      <http:address location="http://192.168.11.214:11888/ConferenceLyncConversationWebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

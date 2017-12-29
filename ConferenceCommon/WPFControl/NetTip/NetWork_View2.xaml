@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="ConferenceCommon.WPFControl.NetTip.NetWork_View2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Width="220" HorizontalAlignment="Right" Margin="0,0,190,0">
+            <Border.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.4"/>
+            </Border.Background>
+        </Border>
+        <!--<WindowsFormsHost Grid.Row="2" Background="Transparent"  Panel.ZIndex="200">
+            
+            <form:Label TextAlign="MiddleCenter" Font="30" BackColor="Transparent"  ForeColor="Red" Text="无法连接到服务器。。。">
+
+            </form:Label>
+        </WindowsFormsHost>-->
+        <Grid Grid.Row="2">
+            <Grid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.4"/>
+            </Grid.Background>
+            <TextBlock  x:Name="txtMessage" VerticalAlignment="Center" Foreground="Red" FontSize="25" HorizontalAlignment="Center" FontWeight="Bold" Text="无法连接到服务器。。。"/>
+        </Grid>
+    </Grid>
+</UserControl>

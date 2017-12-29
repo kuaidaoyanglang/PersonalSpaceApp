@@ -1,0 +1,360 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="PersonalSpaceApp.SearchWindow"
+	xmlns:Common="clr-namespace:PersonalSpaceApp.WPFHelper" 
+	xmlns:Control="clr-namespace:PersonalSpaceApp.Control"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+	xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+	x:Name="Window"
+	Title="SearchWindow"
+	WindowStartupLocation="CenterScreen"   
+         FontFamily="Microsoft YaHei"
+                   WindowStyle="None"
+				   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+				   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                              mc:Ignorable="d"   
+                   Icon="pack://application:,,,/Image/MainWindowLogo.png" 
+	MinWidth="1024" MinHeight="730"
+             d:DesignHeight="738" d:DesignWidth="1024" BorderThickness="0" AllowsTransparency="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26" ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition ></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid   Panel.ZIndex="3" Height="70" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Image/brush_TitleBG.png" Opacity="1"/>
+                </Grid.Background>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="235"/>
+                    <!--<ColumnDefinition Width="371"/>-->
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="297"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="49"/>
+                    <ColumnDefinition Width="16"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Column="0" Grid.Row="0" Height="44" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="13,12,0,0" Width="194" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True" >
+                    <Border.Background>
+                        <ImageBrush ImageSource="Image/logo.png" Stretch="None"/>
+                    </Border.Background>
+                </Border>
+                <!--Text="{Binding SerchText}"-->
+                <Border  Grid.Column="1" Grid.Row="0" />
+
+                <Grid  Grid.Column="4" Grid.Row="0" Height="51">
+                    <Border x:Name="borControl"  Background="#4e90c3" Height="51"  VerticalAlignment="Center"  Width="49" CornerRadius="3">
+                        <Image Margin="0,0,0,1" Source="Image/矢量智能对象.png" Stretch="None" VerticalAlignment="Bottom" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+                    </Border>
+
+                    <Image Margin="0,0,0,1" Source="Image/个人下.png" Stretch="None" VerticalAlignment="Bottom" HorizontalAlignment="Right" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+                </Grid>
+
+                <Image Margin="0,0,233,0" Source="Image/brush_TitleBG.png" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+                <!--</StackPanel>-->
+
+            </Grid>
+
+            <Grid    Margin="-2,-2,0,-2" Width="237" HorizontalAlignment="Left">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="59"/>
+                    <RowDefinition Height="109"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="225"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition />
+                    <!--<RowDefinition />-->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="237"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="1" Background="#0295e3" Height="59" >
+                    <TextBlock Text="筛选搜索结果" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Foreground="#ffffff" FontFamily="Microsoft YaHei" FontWeight="Bold" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True" TextTrimming="CharacterEllipsis"/>
+                </Border>
+
+                <Border Grid.Column="0" Grid.Row="2" Height="109" Background="#FFDFE2E5" Padding="0,0,0,13">
+                    <Common:NavicateListView AreaType="NavicateType"  Style="{StaticResource listView_Style}"  x:Name="NavicateListView1"  Background="#FFDFE2E5" Height="268">
+                        <Common:NavicateListViewItem  Width="236"  Height="48" Style="{StaticResource NavicateListViewItemStyle4}"   NavicateType="MainNavicate_All"     Content="内容搜索"    Foreground="#FF383838"   />
+                        <Common:NavicateListViewItem  Width="236"  Height="48" Style="{StaticResource NavicateListViewItemStyle4}" NavicateType="MainNavicate_Office"    Content="文件搜索"     Foreground="#FF383838"  ChkHeight="48"  />
+                    </Common:NavicateListView>
+                </Border>
+                <Border Grid.Column="0" Grid.Row="3" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="0" Background="#bfbfbf" Panel.ZIndex="3"></Border>
+                <Border Grid.Column="0" Grid.Row="3" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" BorderThickness="0" Background="#ebedef" Panel.ZIndex="3"></Border>
+                <Border Grid.Column="0" Grid.Row="4" Height="225" Background="#FFDFE2E5" Padding="0,14,0,0">
+                    <Common:NavicateListView AreaType="NavicateType"  Style="{StaticResource listView_Style}"  x:Name="NavicateListView2"  Background="#FFDFE2E5" Height="211">
+                        <Common:NavicateListViewItem  Width="236"  Height="39" Style="{StaticResource NavicateListViewItemStyle4}"   NavicateType="MainNavicate_All"     Content="全部文件"    Foreground="#FF383838"   />
+                        <Common:NavicateListViewItem  Width="236"  Height="39" Style="{StaticResource NavicateListViewItemStyle4}" NavicateType="MainNavicate_Office"    Content="文档"     Foreground="#FF383838"    />
+                        <Common:NavicateListViewItem  Width="236"  Height="39" Style="{StaticResource NavicateListViewItemStyle4}"  NavicateType="MainNavicate_Picture"     Content="图片"    Foreground="#FF383838"    />
+                        <Common:NavicateListViewItem  Width="236"  Height="39" Style="{StaticResource NavicateListViewItemStyle4}" NavicateType="MainNavicate_Video"     Content="视频"      Foreground="#FF383838"   />
+                        <Common:NavicateListViewItem  Width="236"  Height="39" Style="{StaticResource NavicateListViewItemStyle4}"  NavicateType="MainNavicate_Audio"    Content="音频"      Foreground="#FF383838"  />
+                    </Common:NavicateListView>
+                </Border>
+                <Border Grid.Column="0" Grid.Row="5" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" BorderThickness="0" Background="#bfbfbf" Panel.ZIndex="3"></Border>
+                <Border Grid.Column="0" Grid.Row="5" Height="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" BorderThickness="0" Background="#ebedef" Panel.ZIndex="3"></Border>
+                <Border Grid.Column="0" Grid.Row="6"  Background="#FFDFE2E5"/>
+                <!--<Border Grid.Column="0" Grid.Row="4" Background="#FFDFE2E5"/>-->
+            </Grid>
+            <Grid  Margin="227,63,-2,-2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8"/>
+                    <ColumnDefinition />
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Border Grid.Column="0" Grid.Row="0"  Margin="0,0,-1,0" />
+                <Border x:Name="borContent"  Grid.Row="0" Grid.Column="1" Background="#ffffff"  Margin="0,0,0,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="66"/>
+                            <RowDefinition Height="47"/>
+                            <RowDefinition Height="37"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" BorderThickness="1" BorderBrush="#d2d2d2" Background="#f7f8f8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <StackPanel Orientation="Horizontal"  >
+                                <!--搜索框-->
+                                <TextBox Width="425" Height="35" Margin="31,0,0,13 " HorizontalAlignment="Left" VerticalAlignment="Bottom"></TextBox>
+                                <!--搜索按钮-->
+                                <Border Height="35" Width="100" CornerRadius="2" BorderThickness="1" BorderBrush="#ef8450" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="18,0,0,13">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFFEA585" Offset="0"/>
+                                            <GradientStop Color="#FFEE7A4C" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <TextBlock Text="搜索" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Microsoft YaHei" FontSize="15"></TextBlock>
+                                </Border>
+                                <!--返回主页按钮-->
+                                <Border Height="35" Width="100" CornerRadius="2" BorderThickness="1" BorderBrush="#27c088" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="29,0,0,13">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF62DDB3" Offset="0"/>
+                                            <GradientStop Color="#FF15BD87" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <TextBlock Text="返回主页" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#ffffff" FontFamily="Microsoft YaHei" FontSize="15"></TextBlock>
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                        <!--面包屑-->
+                        <Border Grid.Row="1" BorderBrush="Silver" BorderThickness="0,0,0,0">
+
+                            <StackPanel Margin="27,0,0,0" Orientation="Horizontal"   >
+                                <StackPanel.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="FontFamily" Value="Microsoft YaHei"/>
+                                        <Setter Property="FontSize" Value="13"/>
+                                        <Setter Property="Foreground" Value="#2870b3"/>
+                                        <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                                    </Style>
+                                </StackPanel.Resources>
+                                <Control:BreadLine  IsEnabled="{Binding BreadLineRootIsEnable}" Foreground="{StaticResource NormalColorBrush}" x:Name="BreadLineRoot"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Grid.Row="2" BorderBrush="#d7d8d9" BorderThickness="1" Margin="10,0,0,0" Background="#FFF0F1F1">
+                            <Border.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="13"/>
+                                    <Setter Property="Foreground" Value="#7b7b7b"/>
+                                    <Setter Property="FontFamily"  Value="Microsoft YaHei"/>
+                                </Style>
+                            </Border.Resources>
+                            <!--搜索结果及操作-->
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="450"/>
+                                </Grid.ColumnDefinitions>
+                                <!--Content="{Binding FirstColumnTitle}"-->
+                                <CheckBox x:Name="checkAll" Margin="18,0,0,0"  Grid.Column="0" FontSize="13" Foreground="#7b7b7b" Height="16" Cursor="Hand"  Style="{StaticResource checkStyle2}" Padding="15,0,0,0"  Content="已为您找到相关文件35个"  Background="{StaticResource brush_Check}" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True" VerticalContentAlignment="Center" VerticalAlignment="Center" />
+                                <Common:NavicateListView Grid.Column="1" AreaType="NormalButton"  x:Name="NavicateListView3" Orientation="Horizontal"  Style="{StaticResource listView_Style}"     VerticalAlignment="Center" IsEnabled="False">
+                                    <!--IsEnabled="False"-->
+                                    <Common:NavicateListViewItem   Style="{StaticResource NavicateListViewItemStyle2}" NavicateType="Resource_Share"  BG_Corner="2"  IsEnabled="{Binding ControlPanelEnable}"  BG_Brush="#efefef"  
+                                              Margin="0"  Content="共享" Foreground="#717171" TitleMargin="8,0,0,0"
+                                              BorderThickness="1" BorderBrush="#aaa9a9" ImgOpacity="1"  Height="26" ImgHeight="16" 
+                                              ImgWidth="16" Img_Brush="{StaticResource brush_Share}" Padding="0,0,0,0"  Width="70" FontSize="14"/>
+
+                                    <Common:NavicateListViewItem   Style="{StaticResource NavicateListViewItemStyle2}"  NavicateType="Resource_DownLoad"  BG_Corner="2"  IsEnabled="{Binding ControlPanelEnable}" BG_Brush="#efefef"  
+                                              Margin="9,0,0,0"  Content="下载" Foreground="#717171" TitleMargin="8,0,0,0"
+                                              BorderThickness="1" BorderBrush="#aaa9a9" ImgOpacity="1"  Height="26" ImgHeight="17" 
+                                              ImgWidth="17" Img_Brush="{StaticResource brush_Download}" Padding="0,0,0,0"  Width="70" FontSize="14"/>
+
+                                    <Common:NavicateListViewItem   Style="{StaticResource NavicateListViewItemStyle2}"  NavicateType="Resource_Delete"  BG_Corner="2"  IsEnabled="{Binding ControlPanelEnable}" BG_Brush="#efefef"  
+                                              Margin="9,0,0,0"  Content="删除" Foreground="#717171"  TitleMargin="8,0,0,0"
+                                              BorderThickness="1" BorderBrush="#aaa9a9" ImgOpacity="1"  Height="26" ImgHeight="19" 
+                                              ImgWidth="15" Img_Brush="{StaticResource  brush_Recycle}" Padding="0,0,0,0"  Width="70" FontSize="14"/>
+
+                                    <Common:NavicateListViewItem  Style="{StaticResource NavicateListViewItemStyle2}"  NavicateType="Resource_Rename"   BG_Corner="2" IsEnabled="{Binding ControlPanelEnable,Mode=TwoWay}"  BG_Brush="#efefef"  
+                                              Margin="9,0,0,0"  Content="重命名" Foreground="#717171" TitleMargin="0,0,0,0"
+                                              BorderThickness="1" BorderBrush="#aaa9a9" ImgOpacity="1"  Height="26" ImgHeight="0" 
+                                              ImgWidth="0" Img_Brush="{StaticResource brush_Upload_Line}" Padding="0"  Width="70"   FontSize="14"/>
+
+                                    <Common:NavicateListViewItem  Style="{StaticResource NavicateListViewItemStyle2}"  NavicateType="Resource_Remove"  BG_Corner="2" IsEnabled="{Binding ControlPanelEnable}"  BG_Brush="#8bb8ea"  
+                                              Margin="9,0,0,0"  Content="移动到" Foreground="#ffffff"
+                                              BorderThickness="0" BorderBrush="#8bb8ea" ImgOpacity="1"  Height="26" ImgHeight="0" 
+                                              ImgWidth="0" Img_Brush="{StaticResource brush_FolderAdd}" Padding="0,0,0,0"  Width="70"  FontSize="14"/>
+
+                                </Common:NavicateListView>
+                            </Grid>
+                        </Border>
+                        <ListView Grid.Row="3">
+                            <ListViewItem>
+                                <ListViewItem.Template>
+                                    <ControlTemplate>
+                                        <Grid>
+                                            <Border Height="118" BorderThickness="0" Background="#ffffff">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="45"/>
+                                                        <ColumnDefinition Width="28"/>
+                                                        <ColumnDefinition Width="323"/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="37"/>
+                                                        <RowDefinition Height="81"/>
+                                                    </Grid.RowDefinitions>
+                                                    <CheckBox Grid.Column="0" Grid.Row="0" Cursor="Hand" IsChecked="{Binding IsItemChecked,Mode=TwoWay}" Style="{StaticResource checkStyle2}"  Background="{StaticResource brush_Check}" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True" Opacity="1"  Margin="18,12,0,0" x:Name="chk" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="16"  ></CheckBox>
+                                                    <Image Grid.Column="1" Grid.Row="0" Width="16" Height="16"  Source="Image/TypeImageSmall/docx.png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,12,0,0" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"></Image>
+                                                    <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,10,0,0" FontFamily="Microsoft YaHei" FontSize="14"><Hyperlink NavigateUri="" Foreground="#0248bc">会议纪要20160715</Hyperlink></TextBlock>
+                                                    <Border Grid.Column="3" Grid.Row="0" x:Name="borderIco" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed" >
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Button Style="{StaticResource btnSStyle}" Margin="0,0,0,0" Background="{StaticResource  button_Share}" Opacity="0.8" Width="17" Height="17">
+                                                                <i:Interaction.Triggers>
+                                                                    <i:EventTrigger  EventName="Click" >
+                                                                        <ei:CallMethodAction  MethodName="Share_Click"     TargetObject="{Binding }" />
+                                                                    </i:EventTrigger>
+                                                                </i:Interaction.Triggers>
+                                                            </Button>
+                                                            <Button Style="{StaticResource btnSStyle}" Margin="10,0,0,0" Background="{StaticResource  button_Download}" Opacity="0.8" Width="18" Height="18">
+                                                                <i:Interaction.Triggers>
+                                                                    <i:EventTrigger  EventName="Click" >
+                                                                        <ei:CallMethodAction  MethodName="Download_Click"     TargetObject="{Binding }" />
+                                                                    </i:EventTrigger>
+                                                                </i:Interaction.Triggers>
+                                                            </Button>
+                                                            <Button Style="{StaticResource btnSStyle}" Margin="13,0,0,0"  Background="{StaticResource button_Dropdown}" Opacity="0.8" Width="18" Height="18">
+                                                                <i:Interaction.Triggers>
+                                                                    <i:EventTrigger  EventName="Click" >
+                                                                        <ei:CallMethodAction  MethodName="Delete_Click"     TargetObject="{Binding }" />
+                                                                    </i:EventTrigger>
+                                                                </i:Interaction.Triggers>
+                                                            </Button>
+                                                        </StackPanel>
+                                                    </Border>
+                                                    <TextBlock  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Width="600" TextWrapping="Wrap" TextTrimming="WordEllipsis"  HorizontalAlignment="Left" FontFamily="Microsoft YaHei" FontSize="14" Foreground="#010101" Text="拥有的 失去了 期待的 全都落空了 喜欢的 不再爱了 遗忘的 想起了 不再见的 也重逢了 某些眼泪 又笑了 这是人生的无常 还是人类的日常 生命有多么无常 生活还不是如常 管明天天气 会是怎么样 今天的雨 还是要懂欣赏 管明天的花 会不会盛放 眼前的蝶 还是迷恋花香 多平常 失去的 不要了 落空的 不再惦记了 不爱了 就爱别的 遗忘的 不想了 不再见的 再不见了 眼泪掉了 就掉了 生活就算再正常 生命还不是无常 就用人类的日常 放过人生的无常 管明天天气 会是怎么样 今天的雨 还是要懂欣赏 管明天的花 会不会盛放 眼前的蝶 还是迷恋花香 管明天天空 会是怎么样 今天的蓝 也要好好赞赏 管明天的蝶 会不会飞翔 此刻的谁 也为它鼓过掌 管人生还会 有多少无常 迫在眉睫 是眼前的日常 当每天好像 没明天一样 才懂平常 有多么不平常 多简单"></TextBlock>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ListViewItem.Template>
+
+                            </ListViewItem>
+                        </ListView>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+
+
+        <Border x:Name="borderTopLeft" Grid.Column="0" Grid.Row="0" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗上左.png" Stretch="None"/>
+            </Border.Background>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="0" Panel.ZIndex="10"    RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗上中.png"/>
+            </Border.Background>
+            <Grid Width="120" Height="19" HorizontalAlignment="Right" Margin="0,3,4,0" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="gridCancelButton"  Grid.Column="0" Panel.ZIndex="3"  ToolTip="注销">
+
+
+                    <Border x:Name="border" Background="#075896" Opacity="0" />
+                    <Image x:Name="image" Source="Image/退出.png" Stretch="None" Opacity="0.5" VerticalAlignment="Top" Margin="0,5,0,0" Panel.ZIndex="1" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+                </Grid>
+                <Grid x:Name="gridMinimizeButton"  Grid.Column="1" Panel.ZIndex="3"   ToolTip="最小化">
+                    <Border x:Name="border1" Background="#05477a" Opacity="0" />
+                    <Image x:Name="image1" Source="Image/最小化.png" Stretch="None" Opacity="0.5" VerticalAlignment="Top" Margin="0,12,0,0" Panel.ZIndex="1" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+
+                </Grid>
+                <Grid x:Name="gridMaximizingButton" Grid.Column="2" Panel.ZIndex="3" >
+                    <Border x:Name="border2"  Background="#05375d" Opacity="0" />
+                    <Image x:Name="image2" Source="Image/小窗.png" Stretch="None" Opacity="0.5" VerticalAlignment="Top" Margin="0,3,0,0" Panel.ZIndex="1" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+
+                </Grid>
+                <Grid x:Name="gridCloseButton" Grid.Column="3" Panel.ZIndex="3"   ToolTip="关闭">
+                    <Border x:Name="border3"  Background="#b2104e" Opacity="0" />
+                    <Image x:Name="image3" Source="Image/关闭窗口.png" Stretch="None" Opacity="0.5" VerticalAlignment="Top" Margin="0,3,0,0" Panel.ZIndex="1" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True"/>
+
+                </Grid>
+            </Grid>
+        </Border>
+        <Border x:Name="borderTopRight" Grid.Column="2" Grid.Row="0" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗上右.png" Stretch="None"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="borderRight" Grid.Column="2" Grid.Row="1" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗右.png"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="borderBottomLeft" Grid.Column="0" Grid.Row="2" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗下左.png" Stretch="None"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="borderBottom" Grid.Column="1" Grid.Row="2" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗下中.png"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="borderBottomRight" Grid.Column="2" Grid.Row="2" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗下右.png" Stretch="None"/>
+            </Border.Background>
+        </Border>
+        <Border x:Name="borderLeft" Grid.Column="0" Grid.Row="1" Panel.ZIndex="10" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+            <Border.Background>
+                <ImageBrush ImageSource="Image/窗左.png"/>
+            </Border.Background>
+        </Border>
+
+        <!--<Grid x:Name="gridCancelWindow" Grid.Column="1" Grid.Row="1" Width="84" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-1,94,0" Panel.ZIndex="11" Visibility="Collapsed">
+            <Border Background="#d0e2ef" >
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5" Direction="323"/>
+                </Border.Effect>
+                <Label Content="退出个人空间" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF020202" MouseLeftButtonDown="Label_MouseLeftButtonDown"></Label>
+
+            </Border>
+        </Grid>-->
+    </Grid>
+</Window>

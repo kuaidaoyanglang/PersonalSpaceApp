@@ -1,0 +1,22 @@
+﻿<ResourceDictionary 
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+  
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+                    xmlns:local="clr-namespace:PersonalSpaceApp.WPFHelper">
+
+    <Style x:Key="windowStyle2" TargetType="local:WindowBase">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="Silver"/>
+        <Setter Property="AllowsTransparency" Value="False"/>        
+    </Style>
+
+
+</ResourceDictionary>
+

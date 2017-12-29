@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns:Control="clr-namespace:PersonalSpaceApp.Control"  
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:local="clr-namespace:PersonalSpaceApp.Control">
+    <!--<Style x:Key="listViewType1" TargetType="ListBox">    
+        <Setter Property="Background" Value="Red"/>        
+        <Setter Property="ItemsPanel" >          
+            <Setter.Value>
+                <ItemsPanelTemplate  >
+                    <WrapPanel ItemWidth="200"   Orientation="Horizontal"
+                               ItemHeight="150"
+                               IsItemsHost="True"
+                               KeyboardNavigation.IsTabStop="False"
+                               Width="{Binding ActualWidth,RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+</ResourceDictionary>

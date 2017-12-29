@@ -1,0 +1,12 @@
+﻿<Common:WindowOperationBase xmlns:WPFControl="clr-namespace:PersonalSpaceApp.WPFControl"  
+                            xmlns:Common="clr-namespace:PersonalSpaceApp.WPFHelper"  
+    x:Class="PersonalSpaceApp.Control.ContentWindow" Style="{StaticResource windowStyle}"
+                       xmlns:Common1="clr-namespace:PersonalSpaceApp.Control"  
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              Icon="pack://application:,,,/Image/MainWindowLogo.png" 
+                    WindowStartupLocation="CenterScreen" WindowState="Maximized" 
+                   Topmost="False" MouseDown="WindowMove"  Background="{x:Null}"                
+         Height="500" Width="500">
+  
+</Common:WindowOperationBase>

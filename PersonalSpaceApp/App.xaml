@@ -1,0 +1,88 @@
+﻿<Application   x:Class="PersonalSpaceApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <!--标题样式-->
+                    <ImageBrush x:Key="brush_TitleBG" ImageSource="pack://application:,,,/Image/brush_TitleBG.png"  Opacity="0.8"/>
+
+                    <!--logo-->
+                    <ImageBrush x:Key="brush_login_logo" ImageSource="pack://application:,,,/Image/logo.png"/>
+
+                    <!--头像-->
+                    <ImageBrush x:Key="brush_tophead_tx" ImageSource="pack://application:,,,/Image/tophead_tx.png"/>
+
+                    <!--全部-->
+                    <ImageBrush x:Key="brush_All"  ImageSource="pack://application:,,,/Image/brush_All.png" />
+
+                    <!--文档-->
+                    <ImageBrush x:Key="brush_Office"  ImageSource="pack://application:,,,/Image/brush_Office.png" />
+
+                    <!--图片-->
+                    <ImageBrush x:Key="brush_Picture"  ImageSource="pack://application:,,,/Image/brush_Picture.png" />
+
+                    <!--视频-->
+                    <ImageBrush x:Key="brush_Video"  ImageSource="pack://application:,,,/Image/brush_Video.png" />
+
+                    <!--音频-->
+                    <ImageBrush x:Key="brush_Audio"  ImageSource="pack://application:,,,/Image/brush_Audio.png" />
+
+                    <!--回收站-->
+                    <ImageBrush x:Key="brush_Recycle"  ImageSource="pack://application:,,,/Image/brush_Recycle.png" />
+
+                    <!--文件上传-->
+                    <ImageBrush x:Key="brush_Upload"   ImageSource="pack://application:,,,/Image/brush_Upload.png" />
+
+                    <!--文件夹-->
+                    <ImageBrush x:Key="brush_FolderAdd"  ImageSource="pack://application:,,,/Image/brush_FolderAdd.png" />
+
+                    <!--文件夹底部-->
+                    <ImageBrush x:Key="brush_Upload_Line"  ImageSource="pack://application:,,,/Image/brush_Upload_Line.png" />
+
+                    <!--移除-->
+                    <ImageBrush x:Key="brush_Delete"  ImageSource="pack://application:,,,/Image/brush_Delete.png" />
+
+                    <!--子项选择画刷-->
+                    <ImageBrush x:Key="brush_Selected" ImageSource="pack://application:,,,/Image/brush_Selected.png"/>
+
+                    <!--等待提示-->
+                    <ImageBrush x:Key="brush_Loading" ImageSource="pack://application:,,,/Image/Loading.png"/>
+
+                    <!--列表模式-->
+                    <ImageBrush x:Key="brush_ListView1"  ImageSource="pack://application:,,,/Image/brush_ListView1.png" />
+
+                    <!--列表模式2-->
+                    <ImageBrush x:Key="brush_ListView2"  ImageSource="pack://application:,,,/Image/brush_ListView2.png" />
+
+                    <!--图标模式-->
+                    <ImageBrush x:Key="brush_PictureView1" ImageSource="pack://application:,,,/Image/brush_PictureView1.png"/>
+
+                    <!--图标模式2-->
+                    <ImageBrush x:Key="brush_PictureView2" ImageSource="pack://application:,,,/Image/brush_PictureView2.png"/>
+
+
+                    <SolidColorBrush x:Key="brush_UnSelected" Color="Transparent"/>
+                    <SolidColorBrush x:Key="brush_Enter" Color="#FFCDD4DD"/>
+                </ResourceDictionary>
+                <ResourceDictionary Source="/PersonalSpaceApp;component/Control/SpaceListViewItem.xaml" />
+
+                
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/Button/SpaceButton.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/Button/ButtonStyle.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/ListView/NavicateListView.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/ListViewItem/NavicateListViewItem.xaml" />
+
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/ListViewItem/FileUploadItem.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/Window/WindowBase.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/Window/WindowOperationBase.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/Datagrid/CustomDataGrid.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/TreeViewItem/Ad_TreeViewItem.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/ListViewItem/Ad_ListViewItem.xaml" />
+                <ResourceDictionary Source="/PersonalSpaceApp;component/WPFHelper/ListViewItem/DownLoadItem.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

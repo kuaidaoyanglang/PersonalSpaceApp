@@ -1,0 +1,207 @@
+﻿<WPFControl:Watch_ViewBase xmlns:WPFControl="clr-namespace:PersonalSpaceApp.WPFControl"
+                           x:Class="PersonalSpaceApp.WPFControl.MediaPlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent">
+                            <Path RenderTransformOrigin="0.5,0.5"  Data="M29.485995,30.372999 L60.183994,46.892485 39.75709,62.464876 29.485995,70.293997 29.485995,52.225613 29.485995,42.417061 29.485995,36.22228 z M60.183998,30.039999 L62.047958,31.235183 69.130997,31.235183 69.130997,47.011587 69.130997,69.960997 61.305355,69.960997 61.305355,47.729513 61.305355,31.233271 z M50,10 C27.908609,10 10,27.908611 10,50 10,72.091391 27.908609,89.999998 50,89.999998 72.091393,89.999998 90,72.091383 90,50 90,27.908607 72.091393,10 50,10 z M50,0 C77.614243,0 100,22.385765 100,50.000004 100,77.614241 77.614243,99.999998 50,99.999998 22.385761,99.999998 0,77.614233 0,49.999996 0,22.385757 22.385761,0 50,0 z" Fill="{TemplateBinding Background}" Stretch="Fill">
+                                <Path.RenderTransform>
+                                    <RotateTransform Angle="180"/>
+                                </Path.RenderTransform>
+                            </Path>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent">
+                            <Path Data="M29.485995,30.372999 L60.183994,46.892485 39.75709,62.464876 29.485995,70.293997 29.485995,52.225613 29.485995,42.417061 29.485995,36.22228 z M60.183998,30.039999 L62.047958,31.235183 69.130997,31.235183 69.130997,47.011587 69.130997,69.960997 61.305355,69.960997 61.305355,47.729513 61.305355,31.233271 z M50,10 C27.908609,10 10,27.908611 10,50 10,72.091391 27.908609,89.999998 50,89.999998 72.091393,89.999998 90,72.091383 90,50 90,27.908607 72.091393,10 50,10 z M50,0 C77.614243,0 100,22.385765 100,50.000004 100,77.614241 77.614243,99.999998 50,99.999998 22.385761,99.999998 0,77.614233 0,49.999996 0,22.385757 22.385761,0 50,0 z" Fill="{TemplateBinding Background}" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent">
+                            <Path Data="M56.683996,23.041001 L58.235455,24.58045 64.130997,24.58045 64.130997,44.901152 64.130997,74.460999 57.617353,74.460999 57.617353,45.825871 57.617353,24.577987 z M37.183985,22.541 L38.804819,24.080448 44.963985,24.080448 44.963985,44.401148 44.963985,73.960999 38.159077,73.960999 38.159077,45.325867 38.159077,24.077986 z M49.999998,9.999999 C27.908609,10 10,27.908611 10,50 10,72.091393 27.908609,90 50,90 72.091393,90 90,72.091385 90,50 90,27.908607 72.091393,10 50,9.999999 z M49.999998,0 L51.290521,0.016330719 C78.308331,0.70083237 100,22.817238 100,50.000004 100,77.614243 77.614243,100 50,100 22.385761,100 0,77.614235 0,49.999996 0,22.81723 21.691671,0.70083046 48.709477,0.016330719 z" Fill="{TemplateBinding Background}" RenderTransformOrigin="0.501299181079102,0.49690760366211" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Data="M57.607332,28.202006 L59.763004,28.202006 59.763004,42.476938 59.763004,55.34609 59.763004,69.153992 59.763004,70.792007 26.232003,52.06843 39.303829,42.125024 z M50,10 C27.908607,10 10,27.908615 10,50 10,72.091393 27.908607,90 50,90 72.091393,90 90,72.091389 90,50 90,27.908607 72.091393,10 50,10 z M50,0 C77.614239,0 100,22.385765 100,50.000004 100,77.18277 78.308327,99.299171 51.290522,99.983673 L50,100 48.709478,99.983673 C21.691668,99.299171 0,77.182762 0,49.999996 0,22.385757 22.385757,0 50,0 z"  Fill="{TemplateBinding Background}" RenderTransformOrigin="0.501299181079102,0.49690760366211" Stretch="Fill">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="180"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyleVolume1" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent">
+                            <Path Data="M14.37502,3.9369906 L14.750011,4.2495078 15.812517,5.0620726 16.437519,6.4371685 16.688001,7.7497605 16.375459,8.9373463 15.375305,10.374946 14.625191,11 13.687537,11 13.562516,10.437949 13.687537,9.9373807 14.250129,9.1868294 14.625191,8.3123616 14.750222,7.3127769 14.625191,6.313042 13.875067,5.4381241 13.562015,4.7500356 13.875067,4.1245011 z M16.062511,0.81300055 L16.312513,0.93850195 16.875013,1.6259403 17.562513,2.0009147 18.125011,2.8133446 18.750017,3.5632933 19.125019,4.4382237 19.500013,5.4381455 19.625023,6.813032 19.625023,8.4379014 C19.625023,8.4379014 19.437517,9.3128318 19.375021,9.5003241 19.312526,9.687807 19.062524,10.625237 19.000019,10.81272 18.937523,11.000202 18.437519,12.062625 18.437519,12.062625 L17.500017,13.187528 16.812517,13.749985 16.125017,13.874987 15.625013,13.749995 15.312006,13.438011 15.37453,13.062527 16.062141,12.43709 16.999794,11.374717 17.624889,10.374844 18.062456,9.4999541 18.375013,8.3121098 18.438009,7.2498273 18.438009,6.2500356 18.125412,5.4371956 17.313121,4.2500914 16.562154,3.1884488 15.749584,2.7509438 15.624572,1.7509317 15.750014,1.5000088 15.875015,1.0625034 z M10.417311,0 L10.667,0.5000041 10.667,14.750001 10.333645,14.750001 9.4169413,14.667001 8.4169061,14.417333 7.2502086,13.66763 6.1668422,12.833895 5.6668245,12.167541 5.3335001,11.833872 0.91670381,11.833872 0.24999357,11.250503 0,10.667484 0,5.5004252 0,3.8332893 0.33301955,3.3329662 4.4999444,3.0826603 6.0830533,2.8323849 6.9168226,2.2492441 7.4171454,1.4994961 8.7504136,0.58280664 9.6673619,0.082924215 z" Fill="{TemplateBinding Background}" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyleVolume2" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="lightGray"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="Transparent">
+                            <Path Data="M13.500283,4.0000008 L14.66695,4.1669878 16.832643,6.3332122 17.332889,6.1668605 18.499776,5.00009 19.333011,4.0000008 20.333305,4.0000008 21.166959,5.00009 18.91689,7.250451 18.8334,8.167241 20.916482,10.250531 20.999978,11.000602 20.333339,11.667326 19.666698,11.667326 17.500119,10.166933 16.333501,10.166933 14.583573,11.917008 13.500283,11.833334 12.666985,10.833334 14.833477,8.6668414 15.166638,7.5000008 13.999971,6.5000008 12.916638,5.4166673 z M9.3328039,0 L10.833009,0.33301573 11,0.83334034 11,15 10.000006,15 8.1666728,14.499995 6.8333365,13.332999 5.5000001,11.9997 1.1666806,11.9997 0.33334156,11.499712 0,10.332745 0,3.9997731 0.33300595,3.4997996 0.83269783,2.916828 6.0826994,2.916828 7.9996201,1.000054 z" Fill="{TemplateBinding Background}" Stretch="Fill"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True"/>
+                            <Trigger Property="IsDefaulted" Value="True"/>
+                            <Trigger Property="IsMouseOver" Value="True"/>
+                            <Trigger Property="IsPressed" Value="True"/>
+                            <Trigger Property="IsEnabled" Value="False"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Border Background="White">
+            <TextBlock Text="{Binding VideoFileName}"/>
+        </Border>
+        <MediaElement Grid.Row="1" Stretch="Fill" LoadedBehavior="Manual" x:Name="mediaPlayer"/>
+
+        <Border Grid.Row="2">
+            <!--控制器-->
+            <Border Grid.Row="1">
+                <Grid Grid.Row="1"  Background="SkyBlue">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="45"/>
+                    </Grid.RowDefinitions>
+
+                    <!--进度条-->
+                    <Border >
+                        <Slider VerticalAlignment="Center" Name="sliderPosition" Margin="-5,0" />
+                    </Border>
+
+                    <!--控制器-->
+                    <Border Grid.Row="1">
+                        <Border.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Style>
+                        </Border.Resources>
+
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" VerticalAlignment="Top" Name="txtPlayTime" Text="00:00" />
+                            <TextBlock Foreground="White" VerticalAlignment="Top" Name="txtAllTime" Text="00:00" Grid.Column="1" HorizontalAlignment="Right" />
+                            <!--上一曲、下一曲-->
+                            <Grid VerticalAlignment="Bottom" Grid.Column="0" Margin="20,0,0,0">
+                                <Button IsEnabled="False" Height="34" Width="34"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"  HorizontalAlignment="Left" Style="{StaticResource ButtonStyle1}" ToolTip="上一首" x:Name="btnLast" />
+                                <Button Height="40" Width="40"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Center" Style="{StaticResource ButtonStyle3}" ToolTip="Play"  Name="btnPlay" />
+                                <Button IsEnabled="False" Height="34" Width="34"  MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" HorizontalAlignment="Right" Style="{StaticResource ButtonStyle2}"  ToolTip="下一曲" x:Name="btnNext" />
+                            </Grid>
+                            <StackPanel VerticalAlignment="Bottom" Height="40"  Orientation="Horizontal" Margin="10,0,0,0"  Grid.Column="1">
+                                <Button Height="20" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"  Style="{StaticResource ButtonStyleVolume1}"  Name="btnVolumne"  />
+                                <Slider Width="120"  Margin="8,0,0,0"  VerticalAlignment="Center" Name="sliderVolume" Panel.ZIndex="100"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+            </Border>
+        </Border>
+    </Grid>
+</WPFControl:Watch_ViewBase>

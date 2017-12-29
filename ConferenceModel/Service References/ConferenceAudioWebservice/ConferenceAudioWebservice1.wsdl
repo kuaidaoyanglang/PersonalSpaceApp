@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResult" type="tns:ConferenceAudioInitRefleshEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConferenceAudioInitRefleshEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AcademicReviewItemTransferEntity_ObserList" type="tns:ArrayOfConferenceAudioItemTransferEntity" />
+          <s:element minOccurs="1" maxOccurs="1" name="RootCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfConferenceAudioItemTransferEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConferenceAudioItemTransferEntity" nillable="true" type="tns:ConferenceAudioItemTransferEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConferenceAudioItemTransferEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Guid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageSendTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageSendDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageSendName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddAuthor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudioMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Operation" type="tns:ConferenceAudioOperationType" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudioUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AudioFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IMMType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalImg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ConferenceAudioOperationType">
+        <s:restriction base="s:string">
+          <s:enumeration value="AddType" />
+          <s:enumeration value="DeleteType" />
+          <s:enumeration value="UpdateType" />
+          <s:enumeration value="UploadCompleateType" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicReviewItemTransferEntity" type="tns:ConferenceAudioItemTransferEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NotifyAudioFileUploadCompleate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicReviewItemTransferEntity" type="tns:ConferenceAudioItemTransferEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyAudioFileUploadCompleateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicReviewItemTransferEntity" type="tns:ConferenceAudioItemTransferEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddOneResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="academicReviewItemTransferEntity" type="tns:ConferenceAudioItemTransferEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SettingAudioTransferTxt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="conferenceAudioItemTransferEntity" type="tns:ConferenceAudioItemTransferEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SettingAudioTransferTxtResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllByMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConferenceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllByMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllByMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOneByJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOneByJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOneByJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIMMJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conferenceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIMMJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIMMJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOneByJsonIncludeAudio">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddOneByJsonIncludeAudioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOneByJsonIncludeAudioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConferenceAudioInitRefleshEntity" nillable="true" type="tns:ConferenceAudioInitRefleshEntity" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOneSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOne" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOneSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyAudioFileUploadCompleateSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyAudioFileUploadCompleate" />
+  </wsdl:message>
+  <wsdl:message name="NotifyAudioFileUploadCompleateSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyAudioFileUploadCompleateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOneSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOne" />
+  </wsdl:message>
+  <wsdl:message name="AddOneSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOneSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOne" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOneSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SettingAudioTransferTxtSoapIn">
+    <wsdl:part name="parameters" element="tns:SettingAudioTransferTxt" />
+  </wsdl:message>
+  <wsdl:message name="SettingAudioTransferTxtSoapOut">
+    <wsdl:part name="parameters" element="tns:SettingAudioTransferTxtResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllByMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllByMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOneByJson" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOneByJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIMMJson" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIMMJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonIncludeAudioSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOneByJsonIncludeAudio" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonIncludeAudioSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOneByJsonIncludeAudioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHttpGetOut">
+    <wsdl:part name="Body" element="tns:ConferenceAudioInitRefleshEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileHttpGetIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonHttpGetIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonHttpGetIn">
+    <wsdl:part name="conferenceName" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonIncludeAudioHttpGetIn" />
+  <wsdl:message name="AddOneByJsonIncludeAudioHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHttpPostOut">
+    <wsdl:part name="Body" element="tns:ConferenceAudioInitRefleshEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileHttpPostIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllByMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonHttpPostIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+    <wsdl:part name="json" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonHttpPostIn">
+    <wsdl:part name="conferenceName" type="s:string" />
+    <wsdl:part name="author" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMJsonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddOneByJsonIncludeAudioHttpPostIn" />
+  <wsdl:message name="AddOneByJsonIncludeAudioHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ConferenceAudioWebserviceSoap">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllSoapIn" />
+      <wsdl:output message="tns:GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOne">
+      <wsdl:input message="tns:UpdateOneSoapIn" />
+      <wsdl:output message="tns:UpdateOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyAudioFileUploadCompleate">
+      <wsdl:input message="tns:NotifyAudioFileUploadCompleateSoapIn" />
+      <wsdl:output message="tns:NotifyAudioFileUploadCompleateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOne">
+      <wsdl:input message="tns:AddOneSoapIn" />
+      <wsdl:output message="tns:AddOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOne">
+      <wsdl:input message="tns:DeleteOneSoapIn" />
+      <wsdl:output message="tns:DeleteOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingAudioTransferTxt">
+      <wsdl:input message="tns:SettingAudioTransferTxtSoapIn" />
+      <wsdl:output message="tns:SettingAudioTransferTxtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <wsdl:input message="tns:GetAllByMobileSoapIn" />
+      <wsdl:output message="tns:GetAllByMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <wsdl:input message="tns:AddOneByJsonSoapIn" />
+      <wsdl:output message="tns:AddOneByJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <wsdl:input message="tns:GetIMMJsonSoapIn" />
+      <wsdl:output message="tns:GetIMMJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <wsdl:input message="tns:AddOneByJsonIncludeAudioSoapIn" />
+      <wsdl:output message="tns:AddOneByJsonIncludeAudioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceAudioWebserviceHttpGet">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllHttpGetIn" />
+      <wsdl:output message="tns:GetAllHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <wsdl:input message="tns:GetAllByMobileHttpGetIn" />
+      <wsdl:output message="tns:GetAllByMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <wsdl:input message="tns:AddOneByJsonHttpGetIn" />
+      <wsdl:output message="tns:AddOneByJsonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <wsdl:input message="tns:GetIMMJsonHttpGetIn" />
+      <wsdl:output message="tns:GetIMMJsonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <wsdl:input message="tns:AddOneByJsonIncludeAudioHttpGetIn" />
+      <wsdl:output message="tns:AddOneByJsonIncludeAudioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceAudioWebserviceHttpPost">
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllHttpPostIn" />
+      <wsdl:output message="tns:GetAllHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <wsdl:input message="tns:GetAllByMobileHttpPostIn" />
+      <wsdl:output message="tns:GetAllByMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <wsdl:input message="tns:AddOneByJsonHttpPostIn" />
+      <wsdl:output message="tns:AddOneByJsonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <wsdl:input message="tns:GetIMMJsonHttpPostIn" />
+      <wsdl:output message="tns:GetIMMJsonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <wsdl:input message="tns:AddOneByJsonIncludeAudioHttpPostIn" />
+      <wsdl:output message="tns:AddOneByJsonIncludeAudioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConferenceAudioWebserviceSoap" type="tns:ConferenceAudioWebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOne">
+      <soap:operation soapAction="http://tempuri.org/UpdateOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyAudioFileUploadCompleate">
+      <soap:operation soapAction="http://tempuri.org/NotifyAudioFileUploadCompleate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOne">
+      <soap:operation soapAction="http://tempuri.org/AddOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOne">
+      <soap:operation soapAction="http://tempuri.org/DeleteOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingAudioTransferTxt">
+      <soap:operation soapAction="http://tempuri.org/SettingAudioTransferTxt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <soap:operation soapAction="http://tempuri.org/GetAllByMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <soap:operation soapAction="http://tempuri.org/AddOneByJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <soap:operation soapAction="http://tempuri.org/GetIMMJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <soap:operation soapAction="http://tempuri.org/AddOneByJsonIncludeAudio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceAudioWebserviceSoap12" type="tns:ConferenceAudioWebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOne">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyAudioFileUploadCompleate">
+      <soap12:operation soapAction="http://tempuri.org/NotifyAudioFileUploadCompleate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOne">
+      <soap12:operation soapAction="http://tempuri.org/AddOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOne">
+      <soap12:operation soapAction="http://tempuri.org/DeleteOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SettingAudioTransferTxt">
+      <soap12:operation soapAction="http://tempuri.org/SettingAudioTransferTxt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <soap12:operation soapAction="http://tempuri.org/GetAllByMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <soap12:operation soapAction="http://tempuri.org/AddOneByJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <soap12:operation soapAction="http://tempuri.org/GetIMMJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <soap12:operation soapAction="http://tempuri.org/AddOneByJsonIncludeAudio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceAudioWebserviceHttpGet" type="tns:ConferenceAudioWebserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAll">
+      <http:operation location="/GetAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <http:operation location="/GetAllByMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <http:operation location="/AddOneByJson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <http:operation location="/GetIMMJson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <http:operation location="/AddOneByJsonIncludeAudio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceAudioWebserviceHttpPost" type="tns:ConferenceAudioWebserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAll">
+      <http:operation location="/GetAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByMobile">
+      <http:operation location="/GetAllByMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJson">
+      <http:operation location="/AddOneByJson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMJson">
+      <http:operation location="/GetIMMJson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOneByJsonIncludeAudio">
+      <http:operation location="/AddOneByJsonIncludeAudio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConferenceAudioWebservice">
+    <wsdl:port name="ConferenceAudioWebserviceSoap" binding="tns:ConferenceAudioWebserviceSoap">
+      <soap:address location="http://192.168.11.214:11888/ConferenceAudioWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceAudioWebserviceSoap12" binding="tns:ConferenceAudioWebserviceSoap12">
+      <soap12:address location="http://192.168.11.214:11888/ConferenceAudioWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceAudioWebserviceHttpGet" binding="tns:ConferenceAudioWebserviceHttpGet">
+      <http:address location="http://192.168.11.214:11888/ConferenceAudioWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceAudioWebserviceHttpPost" binding="tns:ConferenceAudioWebserviceHttpPost">
+      <http:address location="http://192.168.11.214:11888/ConferenceAudioWebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

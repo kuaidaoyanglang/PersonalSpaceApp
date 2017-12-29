@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://SBTQ.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://SBTQ.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://SBTQ.org/">
+      <s:element name="MethodInvoke1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="controlType" type="tns:ControlType1" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ControlType1">
+        <s:restriction base="s:string">
+          <s:enumeration value="Record_Close" />
+          <s:enumeration value="Record_Begin" />
+          <s:enumeration value="Record_End" />
+          <s:enumeration value="Record_CameraStopRotating" />
+          <s:enumeration value="Record_Up" />
+          <s:enumeration value="Record_Down" />
+          <s:enumeration value="Record_Left" />
+          <s:enumeration value="Record_Right" />
+          <s:enumeration value="Record_ZoomEnd" />
+          <s:enumeration value="Record_ZoomLarger" />
+          <s:enumeration value="Record_ZoomSmaller" />
+          <s:enumeration value="Record_ManualOperation" />
+          <s:enumeration value="Record_AutomaticOperation" />
+          <s:enumeration value="Record_ChangeToView1" />
+          <s:enumeration value="Record_ChangeToView2" />
+          <s:enumeration value="Record_ChangeToView3" />
+          <s:enumeration value="Record_ChangeToView4" />
+          <s:enumeration value="Record_ChangeToView5" />
+          <s:enumeration value="Record_ChangeToView6" />
+          <s:enumeration value="Record_BackUp1" />
+          <s:enumeration value="Record_BackUp2" />
+          <s:enumeration value="Record_BackUp3" />
+          <s:enumeration value="Record_BackUp4" />
+          <s:enumeration value="Record_BackUp5" />
+          <s:enumeration value="Record_BackUp6" />
+          <s:enumeration value="Relay_Run_Line1" />
+          <s:enumeration value="Relay_Run_Line2" />
+          <s:enumeration value="Relay_Run_Line3" />
+          <s:enumeration value="Relay_Run_Line4" />
+          <s:enumeration value="Relay_Run_Line5" />
+          <s:enumeration value="Relay_Run_Line6" />
+          <s:enumeration value="Relay_Run_Line7" />
+          <s:enumeration value="Relay_Run_Line8" />
+          <s:enumeration value="Relay_End_Line1" />
+          <s:enumeration value="Relay_End_Line2" />
+          <s:enumeration value="Relay_End_Line3" />
+          <s:enumeration value="Relay_End_Line4" />
+          <s:enumeration value="Relay_End_Line5" />
+          <s:enumeration value="Relay_End_Line6" />
+          <s:enumeration value="Relay_End_Line7" />
+          <s:enumeration value="Relay_End_Line8" />
+          <s:enumeration value="PowerSupply_Run_Line1" />
+          <s:enumeration value="PowerSupply_Run_Line2" />
+          <s:enumeration value="PowerSupply_Run_Line3" />
+          <s:enumeration value="PowerSupply_Run_Line4" />
+          <s:enumeration value="PowerSupply_Run_Line5" />
+          <s:enumeration value="PowerSupply_Run_Line6" />
+          <s:enumeration value="PowerSupply_Run_Line7" />
+          <s:enumeration value="PowerSupply_Run_Line8" />
+          <s:enumeration value="PowerSupply_End_Line1" />
+          <s:enumeration value="PowerSupply_End_Line2" />
+          <s:enumeration value="PowerSupply_End_Line3" />
+          <s:enumeration value="PowerSupply_End_Line4" />
+          <s:enumeration value="PowerSupply_End_Line5" />
+          <s:enumeration value="PowerSupply_End_Line6" />
+          <s:enumeration value="PowerSupply_End_Line7" />
+          <s:enumeration value="PowerSupply_End_Line8" />
+          <s:enumeration value="PowerSupply_ShutAllLines" />
+          <s:enumeration value="PC_UP" />
+          <s:enumeration value="PC_DOWN" />
+          <s:enumeration value="PC_Stop" />
+          <s:enumeration value="PC_Before" />
+          <s:enumeration value="PC_After" />
+          <s:enumeration value="Relay_RunAllLines" />
+          <s:enumeration value="Relay_ShutAllLines" />
+          <s:enumeration value="PowerSupply_RunAllLines" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="MethodInvoke1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodInvoke1Result" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReturnDataBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Method" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InnerError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServerError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Return_Param" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MethodInvoke2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="controlType" type="tns:ControlType2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ControlType2">
+        <s:restriction base="s:string">
+          <s:enumeration value="Fan_Open" />
+          <s:enumeration value="Fan_Close" />
+          <s:enumeration value="Switch_All_Open" />
+          <s:enumeration value="Switch_All_Close" />
+          <s:enumeration value="Certain_Open" />
+          <s:enumeration value="Certain_Close" />
+          <s:enumeration value="Alarm_Open" />
+          <s:enumeration value="Alarm_Close" />
+          <s:enumeration value="Light_Open" />
+          <s:enumeration value="Light_Close" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="MethodInvoke2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodInvoke2Result" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataAll_Get">
+        <s:complexType />
+      </s:element>
+      <s:element name="DataAll_GetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataAll_GetResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatrixChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="matrixChangeType" type="tns:MatrixChangeType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="MatrixChangeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="OneToOne" />
+          <s:enumeration value="OneToTwo" />
+          <s:enumeration value="TwoToOne" />
+          <s:enumeration value="TwoToTwo" />
+          <s:enumeration value="ThreeToOne" />
+          <s:enumeration value="ThreeToTwo" />
+          <s:enumeration value="FourToOne" />
+          <s:enumeration value="FourToTwo" />
+          <s:enumeration value="FiveToOne" />
+          <s:enumeration value="FiveToTwo" />
+          <s:enumeration value="SixToOne" />
+          <s:enumeration value="SixToTwo" />
+          <s:enumeration value="SevenToOne" />
+          <s:enumeration value="SevenToTwo" />
+          <s:enumeration value="EightToOne" />
+          <s:enumeration value="EightToTwo" />
+          <s:enumeration value="NineToOne" />
+          <s:enumeration value="NineToTwo" />
+          <s:enumeration value="TenToOne" />
+          <s:enumeration value="TenToTwo" />
+          <s:enumeration value="ElevenToOne" />
+          <s:enumeration value="ElevenToTwo" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="MatrixChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MatrixChangeResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dispose">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisposeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisposeResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrderCheckResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Maxtrix_Manage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="maxtrixType" type="tns:MaxtrixType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="MaxtrixType">
+        <s:restriction base="s:string">
+          <s:enumeration value="maxtrix1" />
+          <s:enumeration value="maxtrix2" />
+          <s:enumeration value="maxtrix3" />
+          <s:enumeration value="maxtrix4" />
+          <s:enumeration value="maxtrix5" />
+          <s:enumeration value="maxtrix6" />
+          <s:enumeration value="maxtrix7" />
+          <s:enumeration value="maxtrix8" />
+          <s:enumeration value="maxtrix9" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="Maxtrix_ManageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Maxtrix_ManageResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnDataBase" nillable="true" type="tns:ReturnDataBase" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MethodInvoke1SoapIn">
+    <wsdl:part name="parameters" element="tns:MethodInvoke1" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke1SoapOut">
+    <wsdl:part name="parameters" element="tns:MethodInvoke1Response" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2SoapIn">
+    <wsdl:part name="parameters" element="tns:MethodInvoke2" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2SoapOut">
+    <wsdl:part name="parameters" element="tns:MethodInvoke2Response" />
+  </wsdl:message>
+  <wsdl:message name="DataAll_GetSoapIn">
+    <wsdl:part name="parameters" element="tns:DataAll_Get" />
+  </wsdl:message>
+  <wsdl:message name="DataAll_GetSoapOut">
+    <wsdl:part name="parameters" element="tns:DataAll_GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:MatrixChange" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:MatrixChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisposeSoapIn">
+    <wsdl:part name="parameters" element="tns:Dispose" />
+  </wsdl:message>
+  <wsdl:message name="DisposeSoapOut">
+    <wsdl:part name="parameters" element="tns:DisposeResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:OrderCheck" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:OrderCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="Maxtrix_ManageSoapIn">
+    <wsdl:part name="parameters" element="tns:Maxtrix_Manage" />
+  </wsdl:message>
+  <wsdl:message name="Maxtrix_ManageSoapOut">
+    <wsdl:part name="parameters" element="tns:Maxtrix_ManageResponse" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke1HttpGetIn">
+    <wsdl:part name="controlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke1HttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2HttpGetIn">
+    <wsdl:part name="controlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="DataAll_GetHttpGetIn" />
+  <wsdl:message name="DataAll_GetHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeHttpGetIn">
+    <wsdl:part name="matrixChangeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="DisposeHttpGetIn" />
+  <wsdl:message name="DisposeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckHttpGetIn">
+    <wsdl:part name="Code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckHttpGetOut" />
+  <wsdl:message name="Maxtrix_ManageHttpGetIn">
+    <wsdl:part name="maxtrixType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Maxtrix_ManageHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke1HttpPostIn">
+    <wsdl:part name="controlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke1HttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2HttpPostIn">
+    <wsdl:part name="controlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MethodInvoke2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="DataAll_GetHttpPostIn" />
+  <wsdl:message name="DataAll_GetHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeHttpPostIn">
+    <wsdl:part name="matrixChangeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MatrixChangeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="DisposeHttpPostIn" />
+  <wsdl:message name="DisposeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckHttpPostIn">
+    <wsdl:part name="Code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OrderCheckHttpPostOut" />
+  <wsdl:message name="Maxtrix_ManageHttpPostIn">
+    <wsdl:part name="maxtrixType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Maxtrix_ManageHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:portType name="Pro_KnowledgeServiceSoap">
+    <wsdl:operation name="MethodInvoke1">
+      <wsdl:input message="tns:MethodInvoke1SoapIn" />
+      <wsdl:output message="tns:MethodInvoke1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <wsdl:input message="tns:MethodInvoke2SoapIn" />
+      <wsdl:output message="tns:MethodInvoke2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <wsdl:input message="tns:DataAll_GetSoapIn" />
+      <wsdl:output message="tns:DataAll_GetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <wsdl:input message="tns:MatrixChangeSoapIn" />
+      <wsdl:output message="tns:MatrixChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <wsdl:input message="tns:DisposeSoapIn" />
+      <wsdl:output message="tns:DisposeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <wsdl:input message="tns:OrderCheckSoapIn" />
+      <wsdl:output message="tns:OrderCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <wsdl:input message="tns:Maxtrix_ManageSoapIn" />
+      <wsdl:output message="tns:Maxtrix_ManageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Pro_KnowledgeServiceHttpGet">
+    <wsdl:operation name="MethodInvoke1">
+      <wsdl:input message="tns:MethodInvoke1HttpGetIn" />
+      <wsdl:output message="tns:MethodInvoke1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <wsdl:input message="tns:MethodInvoke2HttpGetIn" />
+      <wsdl:output message="tns:MethodInvoke2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <wsdl:input message="tns:DataAll_GetHttpGetIn" />
+      <wsdl:output message="tns:DataAll_GetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <wsdl:input message="tns:MatrixChangeHttpGetIn" />
+      <wsdl:output message="tns:MatrixChangeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <wsdl:input message="tns:DisposeHttpGetIn" />
+      <wsdl:output message="tns:DisposeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <wsdl:input message="tns:OrderCheckHttpGetIn" />
+      <wsdl:output message="tns:OrderCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <wsdl:input message="tns:Maxtrix_ManageHttpGetIn" />
+      <wsdl:output message="tns:Maxtrix_ManageHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Pro_KnowledgeServiceHttpPost">
+    <wsdl:operation name="MethodInvoke1">
+      <wsdl:input message="tns:MethodInvoke1HttpPostIn" />
+      <wsdl:output message="tns:MethodInvoke1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <wsdl:input message="tns:MethodInvoke2HttpPostIn" />
+      <wsdl:output message="tns:MethodInvoke2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <wsdl:input message="tns:DataAll_GetHttpPostIn" />
+      <wsdl:output message="tns:DataAll_GetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <wsdl:input message="tns:MatrixChangeHttpPostIn" />
+      <wsdl:output message="tns:MatrixChangeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <wsdl:input message="tns:DisposeHttpPostIn" />
+      <wsdl:output message="tns:DisposeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <wsdl:input message="tns:OrderCheckHttpPostIn" />
+      <wsdl:output message="tns:OrderCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <wsdl:input message="tns:Maxtrix_ManageHttpPostIn" />
+      <wsdl:output message="tns:Maxtrix_ManageHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Pro_KnowledgeServiceSoap" type="tns:Pro_KnowledgeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MethodInvoke1">
+      <soap:operation soapAction="http://SBTQ.org/MethodInvoke1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <soap:operation soapAction="http://SBTQ.org/MethodInvoke2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <soap:operation soapAction="http://SBTQ.org/DataAll_Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <soap:operation soapAction="http://SBTQ.org/MatrixChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <soap:operation soapAction="http://SBTQ.org/Dispose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <soap:operation soapAction="http://SBTQ.org/OrderCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <soap:operation soapAction="http://SBTQ.org/Maxtrix_Manage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Pro_KnowledgeServiceSoap12" type="tns:Pro_KnowledgeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MethodInvoke1">
+      <soap12:operation soapAction="http://SBTQ.org/MethodInvoke1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <soap12:operation soapAction="http://SBTQ.org/MethodInvoke2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <soap12:operation soapAction="http://SBTQ.org/DataAll_Get" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <soap12:operation soapAction="http://SBTQ.org/MatrixChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <soap12:operation soapAction="http://SBTQ.org/Dispose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <soap12:operation soapAction="http://SBTQ.org/OrderCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <soap12:operation soapAction="http://SBTQ.org/Maxtrix_Manage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Pro_KnowledgeServiceHttpGet" type="tns:Pro_KnowledgeServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="MethodInvoke1">
+      <http:operation location="/MethodInvoke1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <http:operation location="/MethodInvoke2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <http:operation location="/DataAll_Get" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <http:operation location="/MatrixChange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <http:operation location="/Dispose" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <http:operation location="/OrderCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <http:operation location="/Maxtrix_Manage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Pro_KnowledgeServiceHttpPost" type="tns:Pro_KnowledgeServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="MethodInvoke1">
+      <http:operation location="/MethodInvoke1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MethodInvoke2">
+      <http:operation location="/MethodInvoke2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataAll_Get">
+      <http:operation location="/DataAll_Get" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatrixChange">
+      <http:operation location="/MatrixChange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dispose">
+      <http:operation location="/Dispose" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderCheck">
+      <http:operation location="/OrderCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Maxtrix_Manage">
+      <http:operation location="/Maxtrix_Manage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Pro_KnowledgeService">
+    <wsdl:port name="Pro_KnowledgeServiceSoap" binding="tns:Pro_KnowledgeServiceSoap">
+      <soap:address location="http://192.168.1.212:1024/Pro_KnowledgeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Pro_KnowledgeServiceSoap12" binding="tns:Pro_KnowledgeServiceSoap12">
+      <soap12:address location="http://192.168.1.212:1024/Pro_KnowledgeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Pro_KnowledgeServiceHttpGet" binding="tns:Pro_KnowledgeServiceHttpGet">
+      <http:address location="http://192.168.1.212:1024/Pro_KnowledgeService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Pro_KnowledgeServiceHttpPost" binding="tns:Pro_KnowledgeServiceHttpPost">
+      <http:address location="http://192.168.1.212:1024/Pro_KnowledgeService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

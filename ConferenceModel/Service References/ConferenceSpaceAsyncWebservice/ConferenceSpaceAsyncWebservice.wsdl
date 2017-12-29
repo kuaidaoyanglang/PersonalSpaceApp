@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FillSyncServiceData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sharer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uri" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fileType" type="tns:FileType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="FileType">
+        <s:restriction base="s:string">
+          <s:enumeration value="docx" />
+          <s:enumeration value="doc" />
+          <s:enumeration value="xlsx" />
+          <s:enumeration value="xls" />
+          <s:enumeration value="pptx" />
+          <s:enumeration value="ppt" />
+          <s:enumeration value="one" />
+          <s:enumeration value="jpg" />
+          <s:enumeration value="png" />
+          <s:enumeration value="ico" />
+          <s:enumeration value="mp4" />
+          <s:enumeration value="avi" />
+          <s:enumeration value="mp3" />
+          <s:enumeration value="xml" />
+          <s:enumeration value="txt" />
+          <s:enumeration value="record" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="FillSyncServiceDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSyncServiceData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSyncServiceDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSyncServiceDataResult" type="tns:ConferenceSpaceAsyncEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConferenceSpaceAsyncEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sharer" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileType" type="tns:FileType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Uri" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConferenceSpaceAsyncEntity" nillable="true" type="tns:ConferenceSpaceAsyncEntity" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FillSyncServiceDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FillSyncServiceData" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FillSyncServiceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSyncServiceDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSyncServiceData" />
+  </wsdl:message>
+  <wsdl:message name="GetSyncServiceDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSyncServiceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+    <wsdl:part name="uri" type="s:string" />
+    <wsdl:part name="fileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpGetOut" />
+  <wsdl:message name="GetSyncServiceDataHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSyncServiceDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ConferenceSpaceAsyncEntity" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+    <wsdl:part name="uri" type="s:string" />
+    <wsdl:part name="fileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpPostOut" />
+  <wsdl:message name="GetSyncServiceDataHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSyncServiceDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ConferenceSpaceAsyncEntity" />
+  </wsdl:message>
+  <wsdl:portType name="ConferenceSpaceAsyncWebserviceSoap">
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataSoapIn" />
+      <wsdl:output message="tns:FillSyncServiceDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <wsdl:input message="tns:GetSyncServiceDataSoapIn" />
+      <wsdl:output message="tns:GetSyncServiceDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceSpaceAsyncWebserviceHttpGet">
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataHttpGetIn" />
+      <wsdl:output message="tns:FillSyncServiceDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <wsdl:input message="tns:GetSyncServiceDataHttpGetIn" />
+      <wsdl:output message="tns:GetSyncServiceDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceSpaceAsyncWebserviceHttpPost">
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataHttpPostIn" />
+      <wsdl:output message="tns:FillSyncServiceDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <wsdl:input message="tns:GetSyncServiceDataHttpPostIn" />
+      <wsdl:output message="tns:GetSyncServiceDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConferenceSpaceAsyncWebserviceSoap" type="tns:ConferenceSpaceAsyncWebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FillSyncServiceData">
+      <soap:operation soapAction="http://tempuri.org/FillSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <soap:operation soapAction="http://tempuri.org/GetSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceSpaceAsyncWebserviceSoap12" type="tns:ConferenceSpaceAsyncWebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FillSyncServiceData">
+      <soap12:operation soapAction="http://tempuri.org/FillSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <soap12:operation soapAction="http://tempuri.org/GetSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceSpaceAsyncWebserviceHttpGet" type="tns:ConferenceSpaceAsyncWebserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="FillSyncServiceData">
+      <http:operation location="/FillSyncServiceData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <http:operation location="/GetSyncServiceData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceSpaceAsyncWebserviceHttpPost" type="tns:ConferenceSpaceAsyncWebserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="FillSyncServiceData">
+      <http:operation location="/FillSyncServiceData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncServiceData">
+      <http:operation location="/GetSyncServiceData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConferenceSpaceAsyncWebservice">
+    <wsdl:port name="ConferenceSpaceAsyncWebserviceSoap" binding="tns:ConferenceSpaceAsyncWebserviceSoap">
+      <soap:address location="http://192.168.12.214:11888/ConferenceSpaceAsyncWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceSpaceAsyncWebserviceSoap12" binding="tns:ConferenceSpaceAsyncWebserviceSoap12">
+      <soap12:address location="http://192.168.12.214:11888/ConferenceSpaceAsyncWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceSpaceAsyncWebserviceHttpGet" binding="tns:ConferenceSpaceAsyncWebserviceHttpGet">
+      <http:address location="http://192.168.12.214:11888/ConferenceSpaceAsyncWebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceSpaceAsyncWebserviceHttpPost" binding="tns:ConferenceSpaceAsyncWebserviceHttpPost">
+      <http:address location="http://192.168.12.214:11888/ConferenceSpaceAsyncWebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns:WPFHelper="clr-namespace:PersonalSpaceApp.WPFHelper"  
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+                    
+     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                   >
+    <Style x:Key="Ad_ListViewItem_Style" TargetType="WPFHelper:Ad_ListViewItem">
+        <Style.Setters>
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="WPFHelper:Ad_ListViewItem">
+                        <Grid Height="27">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="75"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{TemplateBinding name}" FontFamily="Microsoft YaHei" FontSize="12" Foreground="#525252" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"></TextBlock>
+                            <Image Grid.Column="1" Source="pack://application:,,,/Image/pngDownloadFailed.png" Stretch="None" HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger  EventName="PreviewMouseLeftButtonDown" >
+                                        <ei:CallMethodAction  MethodName="Item_Click"    TargetObject="{Binding }" />
+                                    </i:EventTrigger>
+
+                                </i:Interaction.Triggers>
+                            </Image>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

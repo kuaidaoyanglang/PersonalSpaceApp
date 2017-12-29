@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5DE4D04-1E2F-4F4B-AEA9-42FF01B78B32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConferenceModel</RootNamespace>
+    <AssemblyName>ConferenceModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ConferenceCommon\File\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ClientSocket.cs" />
+    <Compile Include="Common\CommunicationCodeEnterEntity.cs" />
+    <Compile Include="Common\DetectionManage.cs" />
+    <Compile Include="Common\JsonManage.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\NetWorkErrTipType.cs" />
+    <Compile Include="Common\TimerModelJob.cs" />
+    <Compile Include="CommunicationManage.cs" />
+    <Compile Include="Enum\ClientModelType.cs" />
+    <Compile Include="ModelManage.cs" />
+    <Compile Include="Model\ConferenceAudio.cs" />
+    <Compile Include="Model\ConferenceInfo.cs" />
+    <Compile Include="Model\ConferenceLyncConversation.cs" />
+    <Compile Include="Model\ConferenceMatrix.cs" />
+    <Compile Include="Model\ConferenceSpSearch.cs" />
+    <Compile Include="Model\ConferenceTree.cs" />
+    <Compile Include="Model\ConferenceVersion.cs" />
+    <Compile Include="Model\ConferenceSpaceAsync.cs" />
+    <Compile Include="Model\FileSyncAppPool.cs" />
+    <Compile Include="Model\Space_Service.cs" />
+    <Compile Include="Model\StudiomService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ConferenceAudioWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceInfoWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceLyncConversationWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceMatrixWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceSpaceAsyncWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceTreeWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ConferenceVersionWebservice\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FileSyncAppPoolWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SpaceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SPSearch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Studiom_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ConferenceAudioWebservice\ConferenceAudioWebservice1.wsdl" />
+    <None Include="Service References\ConferenceAudioWebservice\ConferenceModel.ConferenceAudioWebservice.ConferenceAudioInitRefleshEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceInfoWebService\ConferenceInfoWebService.wsdl" />
+    <None Include="Service References\ConferenceInfoWebService\ConferenceModel.ConferenceInfoWebService.ClientConfigEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceInfoWebService\ConferenceModel.ConferenceInfoWebService.ConferenceInformationEntityPC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceInfoWebService\ConferenceModel.ConferenceInfoWebService.PortTypeEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceLyncConversationWebservice\ConferenceLyncConversationWebservice1.wsdl" />
+    <None Include="Service References\ConferenceMatrixWebservice\ConferenceMatrixWebservice.wsdl" />
+    <None Include="Service References\ConferenceMatrixWebservice\ConferenceModel.ConferenceMatrixWebservice.ConferenceMatrixEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceMatrixWebservice\ConferenceModel.ConferenceMatrixWebservice.SeatEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\ConferenceModel.ConferenceSpaceAsyncWebservice.ConferenceSpaceAsyncEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\ConferenceSpaceAsyncWebservice.wsdl" />
+    <None Include="Service References\ConferenceTreeWebService\ConferenceModel.ConferenceTreeWebService.ConferenceTreeInitRefleshEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceTreeWebService\ConferenceTreeWebService.wsdl" />
+    <None Include="Service References\ConferenceVersionWebservice\ConferenceModel.ConferenceVersionWebservice.ConferenceVersionUpdateEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConferenceVersionWebservice\ConferenceVersionWebservice.wsdl" />
+    <None Include="Service References\FileSyncAppPoolWebService\FileSyncAppPoolWebservice.wsdl" />
+    <None Include="Service References\SpaceService\Service.wsdl" />
+    <None Include="Service References\SPSearch\SearchService.wsdl" />
+    <None Include="Service References\SPSearch\SharePointSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SPSearch\SharePointSearch1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Studiom_Service\ConferenceModel.Studiom_Service.ReturnDataBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Studiom_Service\Pro_KnowledgeService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ConferenceAudioWebservice\" />
+    <WCFMetadataStorage Include="Service References\ConferenceInfoWebService\" />
+    <WCFMetadataStorage Include="Service References\ConferenceLyncConversationWebservice\" />
+    <WCFMetadataStorage Include="Service References\ConferenceMatrixWebservice\" />
+    <WCFMetadataStorage Include="Service References\ConferenceSpaceAsyncWebservice\" />
+    <WCFMetadataStorage Include="Service References\ConferenceTreeWebService\" />
+    <WCFMetadataStorage Include="Service References\ConferenceVersionWebservice\" />
+    <WCFMetadataStorage Include="Service References\FileSyncAppPoolWebService\" />
+    <WCFMetadataStorage Include="Service References\SpaceService\" />
+    <WCFMetadataStorage Include="Service References\SPSearch\" />
+    <WCFMetadataStorage Include="Service References\Studiom_Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceVersionWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceVersionWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceVersionWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceAudioWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceAudioWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceAudioWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceTreeWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceTreeWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceTreeWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileSyncAppPoolWebService\ConferenceModel.FileSyncAppPoolWebService.FileSyncAppEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FileSyncAppPoolWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileSyncAppPoolWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileSyncAppPoolWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceInfoWebService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceInfoWebService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceInfoWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceLyncConversationWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceLyncConversationWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceLyncConversationWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceMatrixWebservice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceMatrixWebservice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ConferenceMatrixWebservice\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dll\log4net.dll" />
+    <None Include="Service References\SpaceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SpaceService\configuration.svcinfo" />
+    <None Include="Service References\SpaceService\configuration91.svcinfo" />
+    <None Include="Service References\SpaceService\Service.disco" />
+    <None Include="Service References\ConferenceSpaceAsyncWebservice\ConferenceSpaceAsyncWebservice.disco" />
+    <None Include="Service References\FileSyncAppPoolWebService\FileSyncAppPoolWebservice.disco" />
+    <None Include="Service References\ConferenceVersionWebservice\ConferenceVersionWebservice.disco" />
+    <None Include="Service References\ConferenceTreeWebService\ConferenceTreeWebService1.disco" />
+    <None Include="Service References\ConferenceMatrixWebservice\ConferenceMatrixWebservice.disco" />
+    <None Include="Service References\ConferenceLyncConversationWebservice\ConferenceLyncConversationWebservice1.disco" />
+    <None Include="Service References\ConferenceInfoWebService\ConferenceInfoWebService.disco" />
+    <None Include="Service References\ConferenceAudioWebservice\ConferenceAudioWebservice1.disco" />
+    <None Include="Service References\Studiom_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Studiom_Service\configuration.svcinfo" />
+    <None Include="Service References\Studiom_Service\configuration91.svcinfo" />
+    <None Include="Service References\Studiom_Service\Pro_KnowledgeService.disco" />
+    <None Include="Service References\SPSearch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SPSearch\configuration.svcinfo" />
+    <None Include="Service References\SPSearch\configuration91.svcinfo" />
+    <None Include="Service References\SPSearch\SharePointSearch.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConferenceWebCommon\ConferenceWebCommon.csproj">
+      <Project>{188e312f-5daa-4432-a784-97243e68d9f6}</Project>
+      <Name>ConferenceWebCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

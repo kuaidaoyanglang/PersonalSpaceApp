@@ -1,0 +1,9 @@
+﻿<Common:WindowOperationBase xmlns:Common="clr-namespace:PersonalSpaceApp.WPFHelper"  
+    x:Class="PersonalSpaceApp.Window.Copy_ViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Copy_ViewWindow" Height="300" Width="300">
+    <Grid>
+        
+    </Grid>
+</Common:WindowOperationBase>

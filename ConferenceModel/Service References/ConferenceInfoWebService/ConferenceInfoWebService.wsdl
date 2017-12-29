@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetClientConfigInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetClientConfigInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClientConfigInformationResult" type="tns:ClientConfigEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientConfigEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DNS1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DNS2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LyncName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Certification" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificationSerial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDomain" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserDoaminPart1Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LyncIP1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LyncIP2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SPSiteAddressFront" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TreeXmlFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TreeJpgFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeetingFolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PesonalFolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpaceWebSiteUri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScreenResulotionWidth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ScreenResulotionHeight" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalPersonalNoteFile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConferenceFtpWebAddressFront" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FtpServerceAudioName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FtpServercePersonImgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TreeItemEmptyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecordFolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecordExtention" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReacordUploadFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyboardSettingFile_64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyboardSettingFile_32" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FtpUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FtpPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTempInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTempInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTempInformationResult" type="tns:ArrayOfConferenceInformationEntityPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConferenceInformationEntityPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConferenceInformationEntityPC" nillable="true" type="tns:ConferenceInformationEntityPC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConferenceInformationEntityPC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MeetingID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeetingName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoomName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinPeople" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="JoinPeopleName" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeginTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplyPeople" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PTaskName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STaskName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SceneModeType" type="tns:SceneModeType" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxtrixModeType" type="tns:MaxtrixModeType" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstProjectionSeat" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SettingIpList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebUri" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThinClientUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasThinClient" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SceneModeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="StantardMode" />
+          <s:enumeration value="SimpleMode" />
+          <s:enumeration value="EducationMode" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MaxtrixModeType">
+        <s:restriction base="s:string">
+          <s:enumeration value="freeMode" />
+          <s:enumeration value="SendMode" />
+          <s:enumeration value="ControlMode" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ClearTempConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearTempConfigResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTempInformationAboutSceneMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sceneModeType" type="tns:SceneModeType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTempInformationAboutSceneModeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTempInformationAboutMaxtrixMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxtrixModeType" type="tns:MaxtrixModeType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTempInformationAboutMaxtrixModeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClientControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="commander" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClientControlType" type="tns:ClientControlType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ClientControlType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Close" />
+          <s:enumeration value="VersionUpdate" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ClientControlResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RunServerSocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceClientAcceptType" type="tns:ConferenceClientAcceptType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ConferenceClientAcceptType">
+        <s:restriction base="s:string">
+          <s:enumeration value="ConferenceTree" />
+          <s:enumeration value="ConferenceAudio" />
+          <s:enumeration value="ConferenceFileSync" />
+          <s:enumeration value="ConferenceSpaceSync" />
+          <s:enumeration value="ConferenceInfoSync" />
+          <s:enumeration value="LyncConversationSync" />
+          <s:enumeration value="ConferenceMatrixSync" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RunServerSocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunServerSocketResult" type="tns:PortTypeEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PortTypeEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="conferenceClientAcceptType" type="tns:ConferenceClientAcceptType" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServerPoint" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RunServerAllSocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunServerAllSocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunServerAllSocketResult" type="tns:ArrayOfPortTypeEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPortTypeEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PortTypeEntity" nillable="true" type="tns:PortTypeEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FillSyncServiceData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sharer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pageType" type="tns:ConferencePageType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ConferencePageType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Meet" />
+          <s:enumeration value="Tree" />
+          <s:enumeration value="Space" />
+          <s:enumeration value="Resource" />
+          <s:enumeration value="IMM" />
+          <s:enumeration value="PersonNote" />
+          <s:enumeration value="MeetVote" />
+          <s:enumeration value="U_Disk" />
+          <s:enumeration value="Meet_Change" />
+          <s:enumeration value="Chair" />
+          <s:enumeration value="Studiom" />
+          <s:enumeration value="SystemSetting" />
+          <s:enumeration value="Tool" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="FillSyncServiceDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetKeepAlive">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetKeepAliveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetKeepAliveResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveClientSocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceClientAcceptType" type="tns:ConferenceClientAcceptType" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveClientSocketResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveAllClientSocketBySomeOne">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="conferenceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAllClientSocketBySomeOneResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckUserIsOnline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uri" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIsOnlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserIsOnlineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClientHelper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity" type="tns:ConferenceInfoEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConferenceInfoEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sharer" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConferencePageType" type="tns:ConferencePageType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ClientHelperResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConferenceInfoByMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConferenceInfoByMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConferenceInfoByMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveClientSocketByIMM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConferenceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveClientSocketByIMMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveClientSocketByIMMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIMMServerPort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConferenceID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIMMServerPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIMMServerPortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClientConfigEntity" nillable="true" type="tns:ClientConfigEntity" />
+      <s:element name="ArrayOfConferenceInformationEntityPC" nillable="true" type="tns:ArrayOfConferenceInformationEntityPC" />
+      <s:element name="PortTypeEntity" nillable="true" type="tns:PortTypeEntity" />
+      <s:element name="ArrayOfPortTypeEntity" nillable="true" type="tns:ArrayOfPortTypeEntity" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClientConfigInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientConfigInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetClientConfigInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientConfigInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTempInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTempInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetTempInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTempInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearTempConfig" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearTempConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutSceneModeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTempInformationAboutSceneMode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutSceneModeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTempInformationAboutSceneModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTempInformationAboutMaxtrixMode" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTempInformationAboutMaxtrixModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClientControlSoapIn">
+    <wsdl:part name="parameters" element="tns:ClientControl" />
+  </wsdl:message>
+  <wsdl:message name="ClientControlSoapOut">
+    <wsdl:part name="parameters" element="tns:ClientControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunServerSocketSoapIn">
+    <wsdl:part name="parameters" element="tns:RunServerSocket" />
+  </wsdl:message>
+  <wsdl:message name="RunServerSocketSoapOut">
+    <wsdl:part name="parameters" element="tns:RunServerSocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketSoapIn">
+    <wsdl:part name="parameters" element="tns:RunServerAllSocket" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketSoapOut">
+    <wsdl:part name="parameters" element="tns:RunServerAllSocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FillSyncServiceData" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FillSyncServiceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetKeepAliveSoapIn">
+    <wsdl:part name="parameters" element="tns:SetKeepAlive" />
+  </wsdl:message>
+  <wsdl:message name="SetKeepAliveSoapOut">
+    <wsdl:part name="parameters" element="tns:SetKeepAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveClientSocket" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveClientSocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAllClientSocketBySomeOneSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAllClientSocketBySomeOne" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAllClientSocketBySomeOneSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAllClientSocketBySomeOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnlineSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserIsOnline" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnlineSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserIsOnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClientHelperSoapIn">
+    <wsdl:part name="parameters" element="tns:ClientHelper" />
+  </wsdl:message>
+  <wsdl:message name="ClientHelperSoapOut">
+    <wsdl:part name="parameters" element="tns:ClientHelperResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConferenceInfoByMobile" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConferenceInfoByMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveClientSocketByIMM" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveClientSocketByIMMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIMMServerPort" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIMMServerPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientConfigInformationHttpGetIn" />
+  <wsdl:message name="GetClientConfigInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ClientConfigEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetTempInformationHttpGetIn" />
+  <wsdl:message name="GetTempInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfConferenceInformationEntityPC" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigHttpGetOut" />
+  <wsdl:message name="UpdateTempInformationAboutSceneModeHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sceneModeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutSceneModeHttpGetOut" />
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="maxtrixModeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeHttpGetOut" />
+  <wsdl:message name="ClientControlHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="commander" type="s:string" />
+    <wsdl:part name="ClientControlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClientControlHttpGetOut" />
+  <wsdl:message name="RunServerSocketHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="conferenceClientAcceptType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServerSocketHttpGetOut">
+    <wsdl:part name="Body" element="tns:PortTypeEntity" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPortTypeEntity" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+    <wsdl:part name="pageType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpGetOut" />
+  <wsdl:message name="SetKeepAliveHttpGetIn" />
+  <wsdl:message name="SetKeepAliveHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="conferenceClientAcceptType" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketHttpGetOut" />
+  <wsdl:message name="RemoveAllClientSocketBySomeOneHttpGetIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAllClientSocketBySomeOneHttpGetOut" />
+  <wsdl:message name="CheckUserIsOnlineHttpGetIn">
+    <wsdl:part name="Uri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnlineHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileHttpGetIn">
+    <wsdl:part name="loginName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMHttpGetIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortHttpGetIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetClientConfigInformationHttpPostIn" />
+  <wsdl:message name="GetClientConfigInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ClientConfigEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetTempInformationHttpPostIn" />
+  <wsdl:message name="GetTempInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfConferenceInformationEntityPC" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearTempConfigHttpPostOut" />
+  <wsdl:message name="UpdateTempInformationAboutSceneModeHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sceneModeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutSceneModeHttpPostOut" />
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="maxtrixModeType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTempInformationAboutMaxtrixModeHttpPostOut" />
+  <wsdl:message name="ClientControlHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="commander" type="s:string" />
+    <wsdl:part name="ClientControlType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClientControlHttpPostOut" />
+  <wsdl:message name="RunServerSocketHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="conferenceClientAcceptType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServerSocketHttpPostOut">
+    <wsdl:part name="Body" element="tns:PortTypeEntity" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RunServerAllSocketHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfPortTypeEntity" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="sharer" type="s:string" />
+    <wsdl:part name="pageType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FillSyncServiceDataHttpPostOut" />
+  <wsdl:message name="SetKeepAliveHttpPostIn" />
+  <wsdl:message name="SetKeepAliveHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="conferenceClientAcceptType" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketHttpPostOut" />
+  <wsdl:message name="RemoveAllClientSocketBySomeOneHttpPostIn">
+    <wsdl:part name="conferenceID" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAllClientSocketBySomeOneHttpPostOut" />
+  <wsdl:message name="CheckUserIsOnlineHttpPostIn">
+    <wsdl:part name="Uri" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsOnlineHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileHttpPostIn">
+    <wsdl:part name="loginName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetConferenceInfoByMobileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMHttpPostIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+    <wsdl:part name="contactUrl" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveClientSocketByIMMHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortHttpPostIn">
+    <wsdl:part name="strConferenceID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIMMServerPortHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ConferenceInfoWebServiceSoap">
+    <wsdl:operation name="GetClientConfigInformation">
+      <wsdl:input message="tns:GetClientConfigInformationSoapIn" />
+      <wsdl:output message="tns:GetClientConfigInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <wsdl:input message="tns:GetTempInformationSoapIn" />
+      <wsdl:output message="tns:GetTempInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <wsdl:input message="tns:ClearTempConfigSoapIn" />
+      <wsdl:output message="tns:ClearTempConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutSceneModeSoapIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutSceneModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutMaxtrixModeSoapIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutMaxtrixModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <wsdl:input message="tns:ClientControlSoapIn" />
+      <wsdl:output message="tns:ClientControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <wsdl:input message="tns:RunServerSocketSoapIn" />
+      <wsdl:output message="tns:RunServerSocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <wsdl:input message="tns:RunServerAllSocketSoapIn" />
+      <wsdl:output message="tns:RunServerAllSocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataSoapIn" />
+      <wsdl:output message="tns:FillSyncServiceDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <wsdl:input message="tns:SetKeepAliveSoapIn" />
+      <wsdl:output message="tns:SetKeepAliveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <wsdl:input message="tns:RemoveClientSocketSoapIn" />
+      <wsdl:output message="tns:RemoveClientSocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <wsdl:input message="tns:RemoveAllClientSocketBySomeOneSoapIn" />
+      <wsdl:output message="tns:RemoveAllClientSocketBySomeOneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <wsdl:input message="tns:CheckUserIsOnlineSoapIn" />
+      <wsdl:output message="tns:CheckUserIsOnlineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClientHelper">
+      <wsdl:input message="tns:ClientHelperSoapIn" />
+      <wsdl:output message="tns:ClientHelperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <wsdl:input message="tns:GetConferenceInfoByMobileSoapIn" />
+      <wsdl:output message="tns:GetConferenceInfoByMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <wsdl:input message="tns:RemoveClientSocketByIMMSoapIn" />
+      <wsdl:output message="tns:RemoveClientSocketByIMMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <wsdl:input message="tns:GetIMMServerPortSoapIn" />
+      <wsdl:output message="tns:GetIMMServerPortSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceInfoWebServiceHttpGet">
+    <wsdl:operation name="GetClientConfigInformation">
+      <wsdl:input message="tns:GetClientConfigInformationHttpGetIn" />
+      <wsdl:output message="tns:GetClientConfigInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <wsdl:input message="tns:GetTempInformationHttpGetIn" />
+      <wsdl:output message="tns:GetTempInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <wsdl:input message="tns:ClearTempConfigHttpGetIn" />
+      <wsdl:output message="tns:ClearTempConfigHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutSceneModeHttpGetIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutSceneModeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutMaxtrixModeHttpGetIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutMaxtrixModeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <wsdl:input message="tns:ClientControlHttpGetIn" />
+      <wsdl:output message="tns:ClientControlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <wsdl:input message="tns:RunServerSocketHttpGetIn" />
+      <wsdl:output message="tns:RunServerSocketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <wsdl:input message="tns:RunServerAllSocketHttpGetIn" />
+      <wsdl:output message="tns:RunServerAllSocketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataHttpGetIn" />
+      <wsdl:output message="tns:FillSyncServiceDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <wsdl:input message="tns:SetKeepAliveHttpGetIn" />
+      <wsdl:output message="tns:SetKeepAliveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <wsdl:input message="tns:RemoveClientSocketHttpGetIn" />
+      <wsdl:output message="tns:RemoveClientSocketHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <wsdl:input message="tns:RemoveAllClientSocketBySomeOneHttpGetIn" />
+      <wsdl:output message="tns:RemoveAllClientSocketBySomeOneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <wsdl:input message="tns:CheckUserIsOnlineHttpGetIn" />
+      <wsdl:output message="tns:CheckUserIsOnlineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <wsdl:input message="tns:GetConferenceInfoByMobileHttpGetIn" />
+      <wsdl:output message="tns:GetConferenceInfoByMobileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <wsdl:input message="tns:RemoveClientSocketByIMMHttpGetIn" />
+      <wsdl:output message="tns:RemoveClientSocketByIMMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <wsdl:input message="tns:GetIMMServerPortHttpGetIn" />
+      <wsdl:output message="tns:GetIMMServerPortHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ConferenceInfoWebServiceHttpPost">
+    <wsdl:operation name="GetClientConfigInformation">
+      <wsdl:input message="tns:GetClientConfigInformationHttpPostIn" />
+      <wsdl:output message="tns:GetClientConfigInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <wsdl:input message="tns:GetTempInformationHttpPostIn" />
+      <wsdl:output message="tns:GetTempInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <wsdl:input message="tns:ClearTempConfigHttpPostIn" />
+      <wsdl:output message="tns:ClearTempConfigHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutSceneModeHttpPostIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutSceneModeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <wsdl:input message="tns:UpdateTempInformationAboutMaxtrixModeHttpPostIn" />
+      <wsdl:output message="tns:UpdateTempInformationAboutMaxtrixModeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <wsdl:input message="tns:ClientControlHttpPostIn" />
+      <wsdl:output message="tns:ClientControlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <wsdl:input message="tns:RunServerSocketHttpPostIn" />
+      <wsdl:output message="tns:RunServerSocketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <wsdl:input message="tns:RunServerAllSocketHttpPostIn" />
+      <wsdl:output message="tns:RunServerAllSocketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <wsdl:input message="tns:FillSyncServiceDataHttpPostIn" />
+      <wsdl:output message="tns:FillSyncServiceDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <wsdl:input message="tns:SetKeepAliveHttpPostIn" />
+      <wsdl:output message="tns:SetKeepAliveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <wsdl:input message="tns:RemoveClientSocketHttpPostIn" />
+      <wsdl:output message="tns:RemoveClientSocketHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <wsdl:input message="tns:RemoveAllClientSocketBySomeOneHttpPostIn" />
+      <wsdl:output message="tns:RemoveAllClientSocketBySomeOneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <wsdl:input message="tns:CheckUserIsOnlineHttpPostIn" />
+      <wsdl:output message="tns:CheckUserIsOnlineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <wsdl:input message="tns:GetConferenceInfoByMobileHttpPostIn" />
+      <wsdl:output message="tns:GetConferenceInfoByMobileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <wsdl:input message="tns:RemoveClientSocketByIMMHttpPostIn" />
+      <wsdl:output message="tns:RemoveClientSocketByIMMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <wsdl:input message="tns:GetIMMServerPortHttpPostIn" />
+      <wsdl:output message="tns:GetIMMServerPortHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConferenceInfoWebServiceSoap" type="tns:ConferenceInfoWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientConfigInformation">
+      <soap:operation soapAction="http://tempuri.org/GetClientConfigInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <soap:operation soapAction="http://tempuri.org/GetTempInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <soap:operation soapAction="http://tempuri.org/ClearTempConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <soap:operation soapAction="http://tempuri.org/UpdateTempInformationAboutSceneMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <soap:operation soapAction="http://tempuri.org/UpdateTempInformationAboutMaxtrixMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <soap:operation soapAction="http://tempuri.org/ClientControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <soap:operation soapAction="http://tempuri.org/RunServerSocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <soap:operation soapAction="http://tempuri.org/RunServerAllSocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <soap:operation soapAction="http://tempuri.org/FillSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <soap:operation soapAction="http://tempuri.org/SetKeepAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <soap:operation soapAction="http://tempuri.org/RemoveClientSocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <soap:operation soapAction="http://tempuri.org/RemoveAllClientSocketBySomeOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <soap:operation soapAction="http://tempuri.org/CheckUserIsOnline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientHelper">
+      <soap:operation soapAction="http://tempuri.org/ClientHelper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <soap:operation soapAction="http://tempuri.org/GetConferenceInfoByMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <soap:operation soapAction="http://tempuri.org/RemoveClientSocketByIMM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <soap:operation soapAction="http://tempuri.org/GetIMMServerPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceInfoWebServiceSoap12" type="tns:ConferenceInfoWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientConfigInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetClientConfigInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetTempInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <soap12:operation soapAction="http://tempuri.org/ClearTempConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTempInformationAboutSceneMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTempInformationAboutMaxtrixMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <soap12:operation soapAction="http://tempuri.org/ClientControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <soap12:operation soapAction="http://tempuri.org/RunServerSocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <soap12:operation soapAction="http://tempuri.org/RunServerAllSocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <soap12:operation soapAction="http://tempuri.org/FillSyncServiceData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <soap12:operation soapAction="http://tempuri.org/SetKeepAlive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <soap12:operation soapAction="http://tempuri.org/RemoveClientSocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <soap12:operation soapAction="http://tempuri.org/RemoveAllClientSocketBySomeOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserIsOnline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClientHelper">
+      <soap12:operation soapAction="http://tempuri.org/ClientHelper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <soap12:operation soapAction="http://tempuri.org/GetConferenceInfoByMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <soap12:operation soapAction="http://tempuri.org/RemoveClientSocketByIMM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <soap12:operation soapAction="http://tempuri.org/GetIMMServerPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceInfoWebServiceHttpGet" type="tns:ConferenceInfoWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetClientConfigInformation">
+      <http:operation location="/GetClientConfigInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <http:operation location="/GetTempInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <http:operation location="/ClearTempConfig" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <http:operation location="/UpdateTempInformationAboutSceneMode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <http:operation location="/UpdateTempInformationAboutMaxtrixMode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <http:operation location="/ClientControl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <http:operation location="/RunServerSocket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <http:operation location="/RunServerAllSocket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <http:operation location="/FillSyncServiceData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <http:operation location="/SetKeepAlive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <http:operation location="/RemoveClientSocket" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <http:operation location="/RemoveAllClientSocketBySomeOne" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <http:operation location="/CheckUserIsOnline" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <http:operation location="/GetConferenceInfoByMobile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <http:operation location="/RemoveClientSocketByIMM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <http:operation location="/GetIMMServerPort" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ConferenceInfoWebServiceHttpPost" type="tns:ConferenceInfoWebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetClientConfigInformation">
+      <http:operation location="/GetClientConfigInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempInformation">
+      <http:operation location="/GetTempInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearTempConfig">
+      <http:operation location="/ClearTempConfig" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutSceneMode">
+      <http:operation location="/UpdateTempInformationAboutSceneMode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTempInformationAboutMaxtrixMode">
+      <http:operation location="/UpdateTempInformationAboutMaxtrixMode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClientControl">
+      <http:operation location="/ClientControl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RunServerSocket">
+      <http:operation location="/RunServerSocket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunServerAllSocket">
+      <http:operation location="/RunServerAllSocket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillSyncServiceData">
+      <http:operation location="/FillSyncServiceData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SetKeepAlive">
+      <http:operation location="/SetKeepAlive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocket">
+      <http:operation location="/RemoveClientSocket" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllClientSocketBySomeOne">
+      <http:operation location="/RemoveAllClientSocketBySomeOne" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsOnline">
+      <http:operation location="/CheckUserIsOnline" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceInfoByMobile">
+      <http:operation location="/GetConferenceInfoByMobile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveClientSocketByIMM">
+      <http:operation location="/RemoveClientSocketByIMM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIMMServerPort">
+      <http:operation location="/GetIMMServerPort" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConferenceInfoWebService">
+    <wsdl:port name="ConferenceInfoWebServiceSoap" binding="tns:ConferenceInfoWebServiceSoap">
+      <soap:address location="http://192.168.11.214:11888/ConferenceInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceInfoWebServiceSoap12" binding="tns:ConferenceInfoWebServiceSoap12">
+      <soap12:address location="http://192.168.11.214:11888/ConferenceInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceInfoWebServiceHttpGet" binding="tns:ConferenceInfoWebServiceHttpGet">
+      <http:address location="http://192.168.11.214:11888/ConferenceInfoWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ConferenceInfoWebServiceHttpPost" binding="tns:ConferenceInfoWebServiceHttpPost">
+      <http:address location="http://192.168.11.214:11888/ConferenceInfoWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,87 @@
+﻿<ResourceDictionary xmlns:WPFHelper="clr-namespace:PersonalSpaceApp.WPFHelper"  
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Common="clr-namespace:PersonalSpaceApp.WPFHelper"  
+                      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+                    
+     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                   >
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="0" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Upload_Item_Style" TargetType="WPFHelper:FileUploadItem">
+        <Style.Setters>
+            <!--<Setter Property="Real_Source" Value="/Image/gifUploadWait1.gif"/>-->
+            <Setter Property="ImageSource_Wait" Value="/Image/gifUploadWait1.gif"/>
+            <Setter Property="ImageSource_Uploading" Value="/Image/gifUpload.gif"/>
+            <Setter Property="ImageSource_Upload_Successed" Value="/Image/pngDownloadSuccess.png"/>
+            <Setter Property="ImageSource_Upload_Failed" Value="/Image/pngDownloadFailed.png"/>
+            <Setter Property="ImgStateType" Value="wait"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Template" >
+                <!--pack://application:,,,/Image/gifUploadWait1.gif-->
+                <Setter.Value>
+                    <ControlTemplate TargetType="WPFHelper:FileUploadItem">
+                        <Border x:Name="Bd" BorderBrush="{x:Null}" BorderThickness="0" Background="{TemplateBinding Background}" Padding="0" Margin="0" Height="32" SnapsToDevicePixels="true">
+                            <Grid  Height="32" VerticalAlignment="Top" Margin="0" >
+                                <Border  BorderThickness="0,0,0,1" BorderBrush="#e8e8e8" Panel.ZIndex="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="269"/>
+                                            <ColumnDefinition Width="135"/>
+                                            <ColumnDefinition Width="118"/>
+                                            <ColumnDefinition Width="115"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{TemplateBinding FileName}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="19,0,0,0" FontFamily="Microsoft YaHei" FontSize="12" Foreground="#525252"></TextBlock>
+                                        <Common:GifImage x:Name="gifPane_Wait"  Visibility="Visible"  Source="{Binding ImageSource_Wait}" Grid.Column="1" Stretch="None"/>
+                                        <Common:GifImage x:Name="gifPane_Uploading"  Visibility="Collapsed" Source="{Binding ImageSource_Uploading}"  Grid.Column="1" Stretch="None"/>
+                                        <Image x:Name="imgPanel"   Source="{Binding  ImageSource_Upload_Successed}"  Visibility="Collapsed"  Grid.Column="1" Stretch="None"/>
+                                        <TextBlock Grid.Column="2" Text="{TemplateBinding File_Size}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" FontFamily="Microsoft YaHei" FontSize="12" Foreground="#525252"></TextBlock>
+                                        <Image Visibility="{Binding CancelVisibility}" Grid.Column="3" Margin="0"  Source="pack://application:,,,/Image/pngCancelUpload.png"  HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="None" RenderOptions.BitmapScalingMode="NearestNeighbor" UseLayoutRounding="True" Cursor="Hand">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger  EventName="PreviewMouseLeftButtonDown" >
+                                                    <ei:CallMethodAction  MethodName="Item_Delete_Click"    TargetObject="{Binding }" />
+                                                </i:EventTrigger>
+
+                                            </i:Interaction.Triggers>
+                                        </Image>
+                                    </Grid>
+                                </Border>
+                                <Border Visibility="Collapsed" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#ffe5e0" Width="160"></Border>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ImgStateType" Value="wait" >
+                                <Setter  Property="Visibility" Value="Visible" TargetName="gifPane_Wait"/>
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="gifPane_Uploading"/>
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="imgPanel"/>
+                            </Trigger>
+
+                            <Trigger Property="ImgStateType" Value="uploading" >
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="gifPane_Wait"/>
+                                <Setter  Property="Visibility" Value="Visible" TargetName="gifPane_Uploading"/>
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="imgPanel"/>
+                            </Trigger>
+                            <Trigger Property="ImgStateType" Value="successed" >
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="gifPane_Wait"/>
+                                <Setter  Property="Visibility" Value="Collapsed" TargetName="gifPane_Uploading"/>
+                                <Setter  Property="Visibility" Value="Visible" TargetName="imgPanel"/>
+                            </Trigger>
+                            <Trigger Property="ImgStateType" Value="failed" >
+                                <!--<Setter  Property="Visibility" Value="Visible" TargetName="imgPanel"/>-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

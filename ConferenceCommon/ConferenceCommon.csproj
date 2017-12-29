@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAE862FB-9CDB-4D93-AF95-8728EA8A9FD8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConferenceCommon</RootNamespace>
+    <AssemblyName>ConferenceCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding.Net35, Version=0.4.0.0, Culture=neutral, PublicKeyToken=e8a75d24b142be49, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>File\Dll\Gma.QrCodeNet.Encoding.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IWshRuntimeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>File\Dll\Interop.IWshRuntimeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Lync.Model, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Administrator\Desktop\WpfApplication1\WpfApplication5\bin\Debug\Microsoft.Lync.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>File\Dll\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>File\Dll\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>File\Dll\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>File\Dll\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>File\Dll\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>File\Dll\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.5772.27701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>File\Dll\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="Vlc.DotNet.Core">
+      <HintPath>File\Dll\Vlc.DotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Core.Interops">
+      <HintPath>File\Dll\Vlc.DotNet.Core.Interops.dll</HintPath>
+    </Reference>
+    <Reference Include="Vlc.DotNet.Wpf">
+      <HintPath>File\Dll\Vlc.DotNet.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFVisifire.Charts, Version=4.0.2.2, Culture=neutral, PublicKeyToken=9f1c752402bc35c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Conference\ConferenceCommon\File\Dll\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppContainHelper\AppContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AppContainHelper\AppContainer.designer.cs">
+      <DependentUpon>AppContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppContainHelper\APPContainManage.cs" />
+    <Compile Include="AppContainHelper\AppFilenameEditor.cs" />
+    <Compile Include="ApplicationHelper\ApplicationManage.cs" />
+    <Compile Include="AudioRecord\IWaveControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\IWaveRecordInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\Wave.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\WaveIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\WaveNative.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\WaveOut.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioRecord\WaveStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AudioTransferHelper\AudioTransfer.cs" />
+    <Compile Include="AudioTransferHelper\WavConvertToAmr.cs" />
+    <Compile Include="CertificateHelper\CertificationManage.cs" />
+    <Compile Include="DetectionHelper\DetectionManage.cs" />
+    <Compile Include="EmailHelper\EmailManage.cs" />
+    <Compile Include="EntityHelper\ConferenceNavicateType.cs" />
+    <Compile Include="EntityHelper\NotifyType.cs" />
+    <Compile Include="EntityHelper\ParticipantsEntity.cs" />
+    <Compile Include="EntityHelper\RealationMeetingEntity.cs" />
+    <Compile Include="EntityHelper\RenderAsEntity.cs" />
+    <Compile Include="EntityHelper\SpSearchEntity.cs" />
+    <Compile Include="EnumHelper\ClientMode.cs" />
+    <Compile Include="EnumHelper\ContextualModelType.cs" />
+    <Compile Include="EnumHelper\DeviceNum.cs" />
+    <Compile Include="EntityHelper\MeetingUser.cs" />
+    <Compile Include="EntityHelper\SettingEntity.cs" />
+    <Compile Include="EnumHelper\UserLoginState.cs" />
+    <Compile Include="EnumHelper\ViewSelectedItemEnum.cs" />
+    <Compile Include="FileDownAndUp\FtpManage.cs" />
+    <Compile Include="FileDownAndUp\WebClientManage.cs" />
+    <Compile Include="FileDownAndUp\WebClientManage_U.cs" />
+    <Compile Include="FileHelper\CopyDirectoryWorker.cs" />
+    <Compile Include="FileHelper\CutFile.cs" />
+    <Compile Include="FileHelper\FileManage.cs" />
+    <Compile Include="FileHelper\UriManage.cs" />
+    <Compile Include="FireWall\FireManage.cs" />
+    <Compile Include="GifHelper\GifAnimation.cs" />
+    <Compile Include="GifHelper\GifImage.cs" />
+    <Compile Include="GifHelper\GIFImageControl.cs" />
+    <Compile Include="IcoFlash\WindowExtensions.cs" />
+    <Compile Include="IconHelper\Win32API.cs" />
+    <Compile Include="IconHelper\WindowHide.cs" />
+    <Compile Include="IconHelper\WindowInfo.cs" />
+    <Compile Include="IISHelper\IISManage.cs" />
+    <Compile Include="ImageHelper\ImageHelper.cs" />
+    <Compile Include="KeyBoardHelper\ScreenKeyBoard.cs" />
+    <Compile Include="KeyBoardHelper\TouchKeyBoard.cs" />
+    <Compile Include="LocalServiceHelper\LocalServiceManage.cs" />
+    <Compile Include="LogHelper\LogManage.cs" />
+    <Compile Include="LyncHelper\LyncManage.cs" />
+    <Compile Include="LyncHelper\DeviceMange.cs" />
+    <Compile Include="LyncHelper\LyncContactManage.cs" />
+    <Compile Include="NetworkHelper\NetWorkAdapter.cs" />
+    <Compile Include="ObjectCloneHelper\ObjectCloneManage.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QRHelper\QRManage.cs" />
+    <Compile Include="ScreenSetting\DEVMODE.cs" />
+    <Compile Include="ScreenSetting\NativeMethods.cs" />
+    <Compile Include="ScreenSetting\ScreenSettingManage.cs" />
+    <Compile Include="SharePointHelper\ClientContextManage.cs" />
+    <Compile Include="OfficeHelper\ExcelManage.cs" />
+    <Compile Include="OfficeHelper\OfficeManage.cs" />
+    <Compile Include="OfficeHelper\PPTManage.cs" />
+    <Compile Include="OfficeHelper\WordManage.cs" />
+    <Compile Include="PictureHelper\PictureManage.cs" />
+    <Compile Include="ProcessHelper\ProcessManage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshSystemTrayHelper\CopyDataStruct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\HPoint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\HRect.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\Mouse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\MouseEventFlags.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\Msg.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\MsgId.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\OS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\OSName.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\OSVERSIONINFO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\RefreshSysTray.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RefreshSystemTrayHelper\Windows.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegeditHelper\RegeditManage.cs" />
+    <Compile Include="SerialHelper\XmlSerialManage.cs" />
+    <Compile Include="SharePointHelper\SPEntity.cs" />
+    <Compile Include="TimerHelper\TimerDisplayManage.cs" />
+    <Compile Include="TimerHelper\TimerJob.cs" />
+    <Compile Include="TimerHelper\TimerManage.cs" />
+    <Compile Include="VersionHelper\VersionUpdateManage.cs" />
+    <Compile Include="VlcHelper\VlcApi.cs" />
+    <Compile Include="VlcHelper\VlcManage.cs" />
+    <Compile Include="VlcHelper\VlcPlayer.cs" />
+    <Compile Include="WebHelper\MyBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebHelper\WebCredentialManage.cs" />
+    <Compile Include="WindowHelper\MdiHelper.cs" />
+    <Compile Include="WindowHelper\Win32_WPF.cs" />
+    <Compile Include="JsonHelper\JsonManage.cs" />
+    <Compile Include="WindowHelper\WindowExtentionManage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="File\Dll\AudioEngineCore.dll" />
+    <Content Include="File\Dll\dxbase.dll" />
+    <Content Include="File\Dll\ESBasic.dll" />
+    <Content Include="File\Dll\ESBasic.xml" />
+    <Content Include="File\Dll\Gma.QrCodeNet.Encoding.Net35.dll" />
+    <Content Include="File\Dll\Interop.IWshRuntimeLibrary.dll" />
+    <Content Include="File\Dll\log4net.dll" />
+    <Content Include="File\Dll\Microsoft.Lync.Controls.dll" />
+    <Content Include="File\Dll\Microsoft.Lync.Controls.Framework.dll" />
+    <Content Include="File\Dll\Microsoft.Lync.Model.dll" />
+    <Content Include="File\Dll\Microsoft.Lync.Utilities.dll" />
+    <Content Include="File\Dll\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="File\Dll\Microsoft.Office.Interop.PowerPoint.dll" />
+    <Content Include="File\Dll\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="File\Dll\Microsoft.Office.Uc.dll" />
+    <Content Include="File\Dll\Microsoft.SharePoint.Client.dll" />
+    <Content Include="File\Dll\Microsoft.SharePoint.Client.Runtime.dll" />
+    <Content Include="File\Dll\Office.dll" />
+    <Content Include="File\Dll\OMCS.dll" />
+    <Content Include="File\Dll\OMCS.xml" />
+    <Content Include="File\Dll\PaintFramework.dll" />
+    <Content Include="File\Dll\ThoughtWorks.QRCode.dll" />
+    <Content Include="File\Dll\VideoEngineCore.dll" />
+    <Content Include="File\Dll\Vlc.DotNet.Core.dll" />
+    <Content Include="File\Dll\Vlc.DotNet.Core.Interops.dll" />
+    <Content Include="File\Dll\Vlc.DotNet.Wpf.dll" />
+    <Content Include="File\Dll\WaveDLL.dll" />
+    <Content Include="File\Dll\WaveLib.dll" />
+    <Content Include="File\Dll\WPFToolkit.dll" />
+    <Content Include="File\Dll\WPFVisifire.Charts.dll" />
+    <Content Include="Image\Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File\Certification\CertainCT.cer" />
+    <None Include="Fonts\NotoSansHans-Bold.otf" />
+    <None Include="Fonts\NotoSansHans-Light.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NetFwTypeLib">
+      <Guid>{58FBCF7C-E7A9-467C-80B3-FC65E8FCCA08}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SocketHelper\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
